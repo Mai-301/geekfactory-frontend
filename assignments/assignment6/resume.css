@@ -92,7 +92,6 @@
       margin-right: auto;
       padding: 0;
       width: 33%; 
-      /*height: 200px; */
       overflow: hidden;
   }
   .bio{ 
@@ -100,11 +99,10 @@
      margin-left: auto;
       margin-right: auto;
       padding: 0;
-      width: 33%; 
-      /*height: 200px;*/
+      width: 33%;
       overflow: hidden;
   }
-  .personalPhoto{ 
+  /*.personalPhoto{ 
     float: left;
       margin-left: auto;
       margin-right: auto;
@@ -113,11 +111,11 @@
       height: 200px;
       overflow: hidden;
       
-  }
+  }*/
 img{
     display: block;
-    width: 40%;
-    height: 80%;
+    width: 150px;
+    height: 150px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 50%;
@@ -346,7 +344,7 @@ a{
     position: absolute;
     top: 45px;
     left: 0;
-    width: 20px;
+    width: 35px;
     height: 90px;
     background-color: darkslategray;
 }
@@ -355,7 +353,7 @@ a{
     position: absolute;
     top: 327px;
     left: 0;
-    width: 20px;
+    width: 35px;
     height: 67px;
     background-color: darkslategray;
 }
@@ -363,7 +361,7 @@ a{
     position: absolute;
     top: 543px;
     left: 0;
-    width: 20px;
+    width: 35px;
     height: 67px;
     background-color: darkslategray;
 }
@@ -371,7 +369,7 @@ a{
     position: absolute;
     top: 760px;
     left: 0;
-    width: 20px;
+    width: 35px;
     height: 67px;
     background-color: darkslategray;
 }
@@ -404,7 +402,7 @@ section{
     margin-bottom: 30px;
 }
 
-@media (max-width:1170px){
+/*@media (max-width:1170px){
    
     h2 , .sections, .subSections{
         font-size: 25px;
@@ -421,7 +419,7 @@ section{
   }
 }
   @media (max-width:768px){
-      .contacts address, .contacts a{
+    .contacts address, .contacts a{
         font-size: 13px;
     }
    .detailsLeft, .detailsRight{
@@ -457,5 +455,5 @@ section{
      #point4{
          top:830px;
      }
-  }
-    
+  
+  } */
