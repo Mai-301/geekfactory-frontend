@@ -40,7 +40,7 @@
 
   .contacts{
       font-size: 15px;
-      /*margin: auto auto 10px auto;*/
+   
   }
  
   .subSections{
@@ -102,16 +102,7 @@
       width: 33%;
       overflow: hidden;
   }
-  /*.personalPhoto{ 
-    float: left;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 0;
-      width: 33%; 
-      height: 200px;
-      overflow: hidden;
-      
-  }*/
+
 img{
     display: block;
     width: 150px;
@@ -122,37 +113,27 @@ img{
     border: 4px darkslategrey solid;  
 }
 .header{
-    /*display: inline-block;*/
+  
     width: 100%;
-    /*height: 20%;*/
     margin-bottom: 10px;
     padding: 1em;
     margin: 0 -1em;
     border-bottom: 2px darkslategrey solid;
     overflow: hidden;
-    
 }
 
 .details{
-    /*display: inline-block;*/
     width: 100%;
     overflow: hidden;
-    /*height: 80%;*/
-    
 }
 .detailsLeft{
     float: left;
     width: 50%;
-    /*height: 100%;*/
-    /*vertical-align: top;*/
     overflow: hidden;
-    
 }
 .detailsRight{
     float: right;
     width: 50%;
-    /*height: 100%; */
-   /*vertical-align: top;*/
      overflow: hidden;
 }
 body{
@@ -168,7 +149,6 @@ h1{
     margin-bottom: 10px;
     display: inline-block;
     line-height: 50px;
-   
 }
 h4{
     margin-bottom: 10px;
@@ -176,7 +156,6 @@ h4{
 .contacts{
    width: 100%;
    height: 180px;
-   /*font-size: 20px;*/
    overflow: hidden;
 }
 .contacts i{
@@ -277,69 +256,38 @@ a{
 }
 
 #degree1{
-    /*width: 1px;
-    height: 9px;
-    background-color:darkslategray;
-    display: inline-block;  
-    position: absolute;
-    right: 30px;
-    top:67px;*/
     position: absolute;
     width: 1px;
     height: 9px;
     background-color: darkslategray;
     right: 30.5%;
-    /*top: 49%;*/
-
+    
 }
 #degree2{
-    /*width: 1px;
-    height: 9px;
-    background-color:darkslategray;
-    display: inline-block;  
-    margin-right: 31%;*/
     position: absolute;
     width: 1px;
     height: 9px;
     background-color: darkslategray;
     right: 43%;
-    /*top: 49%;*/
+   
 }
 #degree3{
-    /*width: 1px;
-    height: 9px;
-    background-color:darkslategray;
-    display: inline-block;
-    margin-right: 31%;*/
     position: absolute;
     width: 1px;
     height: 9px;
     background-color: darkslategray;
     right: 55.5%;
-    /*top: 49%;*/
+   
 }
 #degree4{
-    /*width: 1px;
-    height: 9px;
-    background-color:darkslategray;
-    display: inline-block;
-    margin-right: 0;
-    padding-right: 0;*/
     position: absolute;
     width: 1px;
     height: 9px;
     background-color: darkslategray;
     right: 68%;
-    /*top: 49%;*/
+   
 }
-/*.degreesContainer{
-    position: relative;
 
-    width: 70%;
-    right: 16%;
-    top: 355px;
-    border:none;
-}*/
 #point1{
     position: absolute;
     top: 45px;
@@ -380,7 +328,6 @@ a{
     margin-bottom: 18px;
 }
 
-
  progress[value] {
   -webkit-appearance: none;
   width: 40%;
@@ -402,61 +349,6 @@ section{
     margin-bottom: 30px;
 }
 
-/*@media (max-width:1170px){
-   
-    h2 , .sections, .subSections{
-        font-size: 25px;
-    }
-   .contacts address, .contacts a,.shortDesc, li,.education li,.skills,.when,.where{
-        font-size: 15px;
-       
-    }
-  .where{
-      margin-right: 220px;
-  }
-  .subSections{
-      font-weight: 500;
-  }
-}
-  @media (max-width:768px){
-    .contacts address, .contacts a{
-        font-size: 13px;
-    }
-   .detailsLeft, .detailsRight{
-          width: 100%;
-      }
-   #degree1{
-        right: 31%;
-  }
-  #degree2{
-      right: 43%;
-  }
-   #degree3{
-      right: 56%;
-  }
-   #degree4{
-      right: 68%;
-  }
-  .education li{
-      display: block;
-  }
-  .shortDesc,.contacts li{
-      font-size: 15px;
-  }
-     #point1{
-         top:70px;
-     }
-      #point2{
-         top:400px;
-     }
-     #point3{
-         top:620px;
-     }
-     #point4{
-         top:830px;
-     }
-  
-  } */
  @media (max-width:768px){
       #point1{
          top:45px;
