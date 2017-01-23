@@ -288,7 +288,7 @@ a{
     width: 1px;
     height: 9px;
     background-color: darkslategray;
-    right: 16%;
+    right: 30.5%;
     /*top: 49%;*/
 
 }
@@ -302,7 +302,7 @@ a{
     width: 1px;
     height: 9px;
     background-color: darkslategray;
-    right: 22%;
+    right: 43%;
     /*top: 49%;*/
 }
 #degree3{
@@ -315,7 +315,7 @@ a{
     width: 1px;
     height: 9px;
     background-color: darkslategray;
-    right: 29%;
+    right: 55.5%;
     /*top: 49%;*/
 }
 #degree4{
@@ -329,7 +329,7 @@ a{
     width: 1px;
     height: 9px;
     background-color: darkslategray;
-    right: 35%;
+    right: 68%;
     /*top: 49%;*/
 }
 /*.degreesContainer{
@@ -351,7 +351,7 @@ a{
 
 #point2{
     position: absolute;
-    top: 327px;
+    top: 330px;
     left: 0;
     width: 35px;
     height: 67px;
@@ -359,7 +359,7 @@ a{
 }
 #point3{
     position: absolute;
-    top: 543px;
+    top: 560px;
     left: 0;
     width: 35px;
     height: 67px;
@@ -367,7 +367,7 @@ a{
 }
 #point4{
     position: absolute;
-    top: 760px;
+    top: 787px;
     left: 0;
     width: 35px;
     height: 67px;
@@ -457,3 +457,17 @@ section{
      }
   
   } */
+ @media (max-width:768px){
+      #point1{
+         top:45px;
+     }
+      #point2{
+         top:610px;
+     }
+     #point3{
+         top:840px;
+     }
+     #point4{
+         top:1070px;
+     }
+ }
