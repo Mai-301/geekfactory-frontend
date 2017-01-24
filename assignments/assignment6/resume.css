@@ -21,7 +21,7 @@ h1{
     font-weight: lighter; 
     font-size: 60px;
     margin-bottom: 10px;
-    display: inline-block;
+    
     line-height: 50px;
 }
 .row p{
@@ -102,7 +102,7 @@ li:before{
     text-indent: -0.5em;   
 }
 
-.languages row li:nth-child(n+3){
+.languages .row:nth-child(2){
     font-style: italic;
     color: gray;
 }
@@ -139,7 +139,7 @@ a{
     height: 9px;
     background-color: darkslategray;
     right: 24%;
-   top: 50px;
+    top: 50px;
 }
 #degree3{
     position: absolute;
@@ -218,17 +218,17 @@ section{
     margin-bottom: 20px;
 }
 
- @media (max-width:768px){
+ @media (max-width:1170px){
       #point1{
-         top:45px;
+         display: none;
      }
       #point2{
-         top:610px;
+       display: none;
      }
      #point3{
-         top:840px;
+         display: none;
      }
      #point4{
-         top:1070px;
+        display: none;
      }
  }
