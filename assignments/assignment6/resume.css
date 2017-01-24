@@ -93,28 +93,16 @@ li:before{
     color: darkslategrey;
 }
 
- .languages li:before, .achievments li:before, .progressList li:before{
+ .languages li:before, .achievments li:before{
      content: none;
      list-style-type: none;
 }
-.skillsAndCompetences{
-    margin-bottom: 10px;
-}
+
 .education li {
-    display: inline-block;
-    width: 40%;
-    margin-right: 30px;
-    list-style-position: inside;
-    text-indent: -0.5em;
-    padding-left: 0.5em;
-    box-sizing: border-box;
+    text-indent: -0.5em;   
 }
-.languages li{
-   display: inline-block;
-   width: 40%;
-   margin-bottom: 0;
-}
-.languages li:nth-child(n+3){
+
+.languages row li:nth-child(n+3){
     font-style: italic;
     color: gray;
 }
@@ -134,21 +122,15 @@ a{
 .fa-envelope, .fa-phone, .fa-linkedin, .fa-github{
     color: darkslategrey;
 }
-.skills{
-    display: inline-block;
-    width: 30%;
-    font-size: 17px;
-    height: 100%;
-    margin-bottom: 15px;
-    margin-top: 20px;
-}
+
 
 #degree1{
     position: absolute;
     width: 1px;
     height: 9px;
     background-color: darkslategray;
-    right: 30.5%;
+    right: 13%;
+    top: 50px;
     
 }
 #degree2{
@@ -156,24 +138,24 @@ a{
     width: 1px;
     height: 9px;
     background-color: darkslategray;
-    right: 43%;
-   
+    right: 24%;
+   top: 50px;
 }
 #degree3{
     position: absolute;
     width: 1px;
     height: 9px;
     background-color: darkslategray;
-    right: 55.5%;
-   
+    right: 35%;
+   top: 50px;
 }
 #degree4{
     position: absolute;
     width: 1px;
     height: 9px;
     background-color: darkslategray;
-    right: 68%;
-   
+    right: 47%;
+    top: 50px;
 }
 
 #point1{
@@ -210,12 +192,7 @@ a{
     height: 96px;
     background-color: darkslategray;
 }
-.contacts li:before{
-    content: none;
-}
-.contacts li{
-    margin-bottom: 18px;
-}
+
 
  progress[value] {
   -webkit-appearance: none;
@@ -238,7 +215,7 @@ progress{
         vertical-align: -webkit-baseline-middle;
 }
 section{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
  @media (max-width:768px){
