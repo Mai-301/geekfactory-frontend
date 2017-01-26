@@ -1,3 +1,5 @@
+       
+$second-color: darkslategrey;
  body{
       margin:auto 20px;
   }
@@ -10,6 +12,10 @@
       font-size: 40px;
       font-weight: 500;
       margin: 0px auto 30px auto;
+  }
+   h4{
+      margin: 17px auto 7px;
+      font-style: italic;
   }
   p{
       font-size: 20px;
@@ -26,69 +32,60 @@
       margin:0px auto;
       padding-left: 15px;
   }
-  h4{
-      margin: 17px auto 7px;
-      font-style: italic;
-  }
-  .sections{
-      font-size: 35px;
-      text-decoration: underline;
-      margin: 25px auto;
-      color: darkslategrey;
-      
-  }
-  .contacts{
-      font-size: 15px;
-    
+ 
+  body{
+      border: 2px solid $second-color;   
   }
  
 
 @import 'reset';
-  body{
-      border: 2px solid darkslategrey;
+
+   .sections{
+      font-size: 35px;
+      text-decoration: underline;
+      margin: 25px auto;
+      color: $second-color;
       
   }
-  .contactsList{ 
-     float: left;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 0;
-      width: 33%; 
-      overflow: hidden;
+  .headerColumns{
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    width: 33%; 
+    overflow: hidden;
   }
   .bio{ 
-      float: left;
-     margin-left: auto;
-      margin-right: auto;
-      padding: 0;
-      width: 33%; 
-      overflow: hidden;
+    @extend .headerColumns;
   }
   .personalPhoto{ 
-    float: left;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 0;
-      width: 33%; 
-      height: 200px;
-      overflow: hidden;
-      
+   @extend .headerColumns;
+      height: 200px; 
+    }
+  .contactsList{ 
+     @extend .headerColumns;
   }
-img{
+  img{
     display: block;
     width: 40%;
     height: 80%;
     margin-left: auto;
     margin-right: auto;
     border-radius: 50%;
-    border: 4px darkslategrey solid;  
-}
-.header{
+    border: 4px $second-color solid;  
+ }
+  .contacts{
+    font-size: 15px;
+    width: 100%;
+    overflow: hidden;
+  }
+ 
+ .header{
     width: 100%;
     margin-bottom: 10px;
     padding: 1em;
     margin: 0 -1em;
-    border-bottom: 2px darkslategrey solid;
+    border-bottom: 2px $second-color solid;
     overflow: hidden;
     
 }
@@ -106,7 +103,7 @@ img{
 .detailsRight{
     float: right;
     width: 50%;
-     overflow: hidden;
+    overflow: hidden;
 }
 body{
     padding: 30px 20px 10px;
@@ -121,29 +118,27 @@ h1{
     margin-bottom: 10px;
     display: inline-block;
     line-height: 50px;
-   
 }
 h4{
     margin-bottom: 10px;
 }
-.contacts{
-   width: 100%;
-   height: 180px;
-   overflow: hidden;
-}
-.contacts i{
-   float: right;
-   width: 7%;
-}
-.contacts p{
-    float: left;
-    width: 93%;
-}
-.contacts address{
-    display: initial;
-    overflow: hidden;
-    width: 95%;
-}
+
+.contacts {
+    i{
+        float: right;
+        width: 7%;
+    }
+    p{
+        float: left;
+        width: 93%;
+    }
+    address{
+        display: initial;
+        overflow: hidden;
+        width: 95%;
+    }
+ }
+
 .shortDesc{
     font-size: 18px;
 }
@@ -161,7 +156,7 @@ h4{
     font-style: italic;
     font-size: 15px;
     float: right;
-    margin-right: 180px;  
+    margin-right: 20%;  
 }
 
 .subSections{
@@ -175,7 +170,7 @@ ul{
 }
 li:before{
     content: "• ";
-    color: darkslategrey;
+    color: $second-color;
 }
 
  .languages li:before, .achievments li:before, .progressList li:before{
@@ -217,7 +212,7 @@ a{
     font-size: 15px;
 }
 .fa-envelope, .fa-phone, .fa-linkedin, .fa-github{
-    color: darkslategrey;
+    color: $second-color;
 }
 .skills{
     display: inline-block;
@@ -227,76 +222,64 @@ a{
     margin-bottom: 15px;
     margin-top: 20px;
 }
-
-#degree1{
+.scaleBar{
     position: absolute;
     width: 1px;
     height: 9px;
     background-color: darkslategray;
+}
+#degree1{
+    @extend .scaleBar;
     right: 16%;
 }
 #degree2{
-    position: absolute;
-    width: 1px;
-    height: 9px;
-    background-color: darkslategray;
+     @extend .scaleBar;
     right: 22%;
 }
 #degree3{
-    position: absolute;
-    width: 1px;
-    height: 9px;
-    background-color: darkslategray;
+    @extend .scaleBar;
     right: 29%;
 }
 #degree4{
-    position: absolute;
-    width: 1px;
-    height: 9px;
-    background-color: darkslategray;
+    @extend .scaleBar;
     right: 35%;
 }
 
+.leftColoredRect{
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 90px;
+  background-color: darkslategray;
+}
 #point1{
-    position: absolute;
-    top: 45px;
-    left: 0;
-    width: 20px;
-    height: 90px;
-    background-color: darkslategray;
+  @extend .leftColoredRect;
+  top: 45px;
 }
 
 #point2{
-    position: absolute;
-    top: 327px;
-    left: 0;
-    width: 20px;
-    height: 67px;
-    background-color: darkslategray;
+   @extend .leftColoredRect;
+   top: 327px;
+    
 }
 #point3{
-    position: absolute;
-    top: 543px;
-    left: 0;
-    width: 20px;
-    height: 67px;
-    background-color: darkslategray;
+     @extend .leftColoredRect;
+     top: 543px;
+    
 }
 #point4{
-    position: absolute;
-    top: 760px;
-    left: 0;
-    width: 20px;
-    height: 67px;
-    background-color: darkslategray;
+     @extend .leftColoredRect;
+     top: 760px;
+   
 }
-.contacts li:before{
+.contacts {
+    li:before{
     content: none;
-}
-.contacts li{
+    }
+    li{
     margin-bottom: 18px;
+    }
 }
-
 
  progress[value] {
   -webkit-appearance: none;
@@ -304,7 +287,7 @@ a{
   height: 20px;
 }
 progress::-webkit-progress-value{
-  background-color: darkslategrey;
+  background-color: $second-color;
   border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
  
@@ -324,21 +307,30 @@ section{
     h2 , .sections, .subSections{
         font-size: 25px;
     }
-   .contacts address, .contacts a,.shortDesc, li,.education li,.skills,.when,.where{
-        font-size: 15px;
-       
+   .contacts {
+       address{
+            font-size: 15px;
+       } a{
+            font-size: 15px;
+       }
     }
-  .where{
-      margin-right: 220px;
-  }
-  .subSections{
+    .shortDesc, li,.education li,.skills,.when,.where{
+    font-size: 15px;
+   }
+    .subSections{
       font-weight: 500;
-  }
+    }
 }
   @media (max-width:768px){
-      .contacts address, .contacts a{
-        font-size: 13px;
-    }
+      .contacts {
+        address{
+            font-size: 13px;
+        }  
+        a{
+           font-size: 13px;
+        }
+      } 
+    
    .detailsLeft, .detailsRight{
           width: 100%;
       }
@@ -372,5 +364,6 @@ section{
      #point4{
          top:830px;
      }
-  }
+  
     
+}

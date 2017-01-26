@@ -12,6 +12,10 @@ h2 {
   font-weight: 500;
   margin: 0px auto 30px auto; }
 
+h4 {
+  margin: 17px auto 7px;
+  font-style: italic; }
+
 p {
   font-size: 20px;
   margin: 30px auto; }
@@ -27,18 +31,8 @@ ol {
   margin: 0px auto;
   padding-left: 15px; }
 
-h4 {
-  margin: 17px auto 7px;
-  font-style: italic; }
-
-.sections {
-  font-size: 35px;
-  text-decoration: underline;
-  margin: 25px auto;
-  color: darkslategrey; }
-
-.contacts {
-  font-size: 15px; }
+body {
+  border: 2px solid darkslategrey; }
 
 h1,
 h2,
@@ -54,18 +48,13 @@ body, .sections,
   margin: 0;
   padding: 0; }
 
-body {
-  border: 2px solid darkslategrey; }
+.sections {
+  font-size: 35px;
+  text-decoration: underline;
+  margin: 25px auto;
+  color: darkslategrey; }
 
-.contactsList {
-  float: left;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0;
-  width: 33%;
-  overflow: hidden; }
-
-.bio {
+.headerColumns, .bio, .personalPhoto, .contactsList {
   float: left;
   margin-left: auto;
   margin-right: auto;
@@ -74,13 +63,7 @@ body {
   overflow: hidden; }
 
 .personalPhoto {
-  float: left;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0;
-  width: 33%;
-  height: 200px;
-  overflow: hidden; }
+  height: 200px; }
 
 img {
   display: block;
@@ -90,6 +73,11 @@ img {
   margin-right: auto;
   border-radius: 50%;
   border: 4px darkslategrey solid; }
+
+.contacts {
+  font-size: 15px;
+  width: 100%;
+  overflow: hidden; }
 
 .header {
   width: 100%;
@@ -130,19 +118,12 @@ h1 {
 h4 {
   margin-bottom: 10px; }
 
-.contacts {
-  width: 100%;
-  height: 180px;
-  overflow: hidden; }
-
 .contacts i {
   float: right;
   width: 7%; }
-
 .contacts p {
   float: left;
   width: 93%; }
-
 .contacts address {
   display: initial;
   overflow: hidden;
@@ -165,7 +146,7 @@ h4 {
   font-style: italic;
   font-size: 15px;
   float: right;
-  margin-right: 180px; }
+  margin-right: 20%; }
 
 .subSections {
   margin-top: 5px;
@@ -229,69 +210,45 @@ a {
   margin-bottom: 15px;
   margin-top: 20px; }
 
-#degree1 {
+.scaleBar, #degree1, #degree2, #degree3, #degree4 {
   position: absolute;
   width: 1px;
   height: 9px;
-  background-color: darkslategray;
+  background-color: darkslategray; }
+
+#degree1 {
   right: 16%; }
 
 #degree2 {
-  position: absolute;
-  width: 1px;
-  height: 9px;
-  background-color: darkslategray;
   right: 22%; }
 
 #degree3 {
-  position: absolute;
-  width: 1px;
-  height: 9px;
-  background-color: darkslategray;
   right: 29%; }
 
 #degree4 {
-  position: absolute;
-  width: 1px;
-  height: 9px;
-  background-color: darkslategray;
   right: 35%; }
 
-#point1 {
+.leftColoredRect, #point1, #point2, #point3, #point4 {
   position: absolute;
-  top: 45px;
   left: 0;
   width: 20px;
   height: 90px;
   background-color: darkslategray; }
 
+#point1 {
+  top: 45px; }
+
 #point2 {
-  position: absolute;
-  top: 327px;
-  left: 0;
-  width: 20px;
-  height: 67px;
-  background-color: darkslategray; }
+  top: 327px; }
 
 #point3 {
-  position: absolute;
-  top: 543px;
-  left: 0;
-  width: 20px;
-  height: 67px;
-  background-color: darkslategray; }
+  top: 543px; }
 
 #point4 {
-  position: absolute;
-  top: 760px;
-  left: 0;
-  width: 20px;
-  height: 67px;
-  background-color: darkslategray; }
+  top: 760px; }
 
 .contacts li:before {
   content: none; }
-
 .contacts li {
   margin-bottom: 18px; }
 
@@ -318,16 +275,20 @@ section {
   h2, .sections, .subSections {
     font-size: 25px; }
 
-  .contacts address, .contacts a, .shortDesc, li, .education li, .skills, .when, .where {
+  .contacts address {
+    font-size: 15px; }
+  .contacts a {
     font-size: 15px; }
 
-  .where {
-    margin-right: 220px; }
+  .shortDesc, li, .education li, .skills, .when, .where {
+    font-size: 15px; }
 
   .subSections {
     font-weight: 500; } }
 @media (max-width: 768px) {
-  .contacts address, .contacts a {
+  .contacts address {
+    font-size: 13px; }
+  .contacts a {
     font-size: 13px; }
 
   .detailsLeft, .detailsRight {
