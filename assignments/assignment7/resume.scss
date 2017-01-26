@@ -1,0 +1,463 @@
+ 
+ $secondColor: darkslategrey;
+ body{
+      margin:auto 20px;
+  }
+  h1{
+      font-size: 55px;
+      padding: 0px 0px;
+      margin: 40px auto 0px auto;
+  }
+  h2{
+      font-size: 40px;
+      font-weight: 500;
+      margin: 0px auto 30px auto;
+  }
+  p{
+      font-size: 20px;
+      margin: 30px auto;
+  }
+  a{
+      text-decoration: none;
+  }
+  ul{
+      margin: 0px auto;
+      padding-left: 15px;
+  }
+  ol{
+      margin:0px auto;
+      padding-left: 15px;
+  }
+  h4{
+      margin: 17px auto 7px;
+      font-style: italic;
+  }
+  .sections{
+      font-size: 35px;
+      text-decoration: underline;
+      margin: 25px auto;
+      color: $secondColor;
+      
+  }
+
+  .contacts{
+      font-size: 15px;
+      /*margin: auto auto 10px auto;*/
+  }
+ 
+  .subSections{
+      margin: 0px;
+  }
+  h1,h2,h3,h4,h5,h6{
+      margin: 0;
+      padding: 0;
+  }
+  p{
+      margin: 0;
+      padding: 0;
+  }
+  a{
+      margin: 0;
+      padding: 0;
+  }
+  ul{
+      margin: 0;
+      padding: 0;
+  }
+  ol{
+      margin: 0;
+      padding: 0;
+  }
+   body{
+     margin: 0;
+     padding: 0;
+  }
+  .sections{
+     margin: 0;
+     padding: 0;
+  }
+  .contacts{
+    margin: 0;
+    padding: 0;
+  }
+  .subSections{
+      margin: 0;
+      padding: 0;
+  }
+  body{
+      border: 2px solid $secondColor;
+      
+  }
+  .contactsList{ 
+     float: left;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0;
+      width: 33%; 
+      /*height: 200px; */
+      overflow: hidden;
+  }
+  .bio{ 
+      float: left;
+     margin-left: auto;
+      margin-right: auto;
+      padding: 0;
+      width: 33%; 
+      /*height: 200px;*/
+      overflow: hidden;
+  }
+  .personalPhoto{ 
+    float: left;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0;
+      width: 33%; 
+      height: 200px;
+      overflow: hidden;
+      
+  }
+img{
+    display: block;
+    width: 40%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    border: 4px $secondColor solid;  
+}
+.header{
+    /*display: inline-block;*/
+    width: 100%;
+    /*height: 20%;*/
+    margin-bottom: 10px;
+    padding: 1em;
+    margin: 0 -1em;
+    border-bottom: 2px $secondColor solid;
+    overflow: hidden;
+    
+}
+
+.details{
+    /*display: inline-block;*/
+    width: 100%;
+    overflow: hidden;
+    /*height: 80%;*/
+    
+}
+.detailsLeft{
+    float: left;
+    width: 50%;
+    /*height: 100%;*/
+    /*vertical-align: top;*/
+    overflow: hidden;
+    
+}
+.detailsRight{
+    float: right;
+    width: 50%;
+    /*height: 100%; */
+   /*vertical-align: top;*/
+     overflow: hidden;
+}
+body{
+    padding: 30px 20px 10px;
+}
+h2{
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+h1{
+    font-weight: lighter; 
+    font-size: 60px;
+    margin-bottom: 10px;
+    display: inline-block;
+    line-height: 50px;
+   
+}
+h4{
+    margin-bottom: 10px;
+}
+.contacts{
+   width: 100%;
+   height: 180px;
+   /*font-size: 20px;*/
+   overflow: hidden;
+}
+.contacts i{
+   float: right;
+   width: 7%;
+}
+.contacts p{
+    float: left;
+    width: 93%;
+}
+.contacts address{
+    display: initial;
+    overflow: hidden;
+    width: 95%;
+}
+.shortDesc{
+    font-size: 18px;
+}
+.sections{
+    text-decoration: none;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.when{
+    font-style: italic;
+    font-size: 15px;
+    float: left
+}
+.where{
+    font-style: italic;
+    font-size: 15px;
+    float: right;
+    margin-right: 180px;  
+}
+
+.subSections{
+   margin-top: 5px;
+   margin-bottom: 5px;
+   clear: both;
+}
+ul{
+    margin-bottom: 20px;
+    list-style: none;   
+}
+li:before{
+    content: "• ";
+    color: $secondColor;
+}
+
+ .languages li:before, .achievments li:before, .progressList li:before{
+     content: none;
+     list-style-type: none;
+}
+.skillsAndCompetences{
+    margin-bottom: 10px;
+}
+.education li {
+    display: inline-block;
+    width: 40%;
+    margin-right: 30px;
+    list-style-position: inside;
+    text-indent: -0.5em;
+    padding-left: 0.5em;
+    box-sizing: border-box;
+}
+.languages li{
+   display: inline-block;
+   width: 40%;
+   margin-bottom: 0;
+}
+.languages li:nth-child(n+3){
+    font-style: italic;
+    color: gray;
+}
+li{ 
+     margin-bottom: 10px;
+}
+.interests{
+font-size: 17px;
+}
+.companyName{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+a{
+    font-size: 15px;
+}
+.fa-envelope, .fa-phone, .fa-linkedin, .fa-github{
+    color: $secondColor;
+}
+.skills{
+    display: inline-block;
+    width: 30%;
+    font-size: 17px;
+    height: 100%;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+#degree1{
+    /*width: 1px;
+    height: 9px;
+    background-color:darkslategray;
+    display: inline-block;  
+    position: absolute;
+    right: 30px;
+    top:67px;*/
+    position: absolute;
+    width: 1px;
+    height: 9px;
+    background-color: darkslategray;
+    right: 16%;
+    /*top: 49%;*/
+
+}
+#degree2{
+    /*width: 1px;
+    height: 9px;
+    background-color:darkslategray;
+    display: inline-block;  
+    margin-right: 31%;*/
+    position: absolute;
+    width: 1px;
+    height: 9px;
+    background-color: darkslategray;
+    right: 22%;
+    /*top: 49%;*/
+}
+#degree3{
+    /*width: 1px;
+    height: 9px;
+    background-color:darkslategray;
+    display: inline-block;
+    margin-right: 31%;*/
+    position: absolute;
+    width: 1px;
+    height: 9px;
+    background-color: darkslategray;
+    right: 29%;
+    /*top: 49%;*/
+}
+#degree4{
+    /*width: 1px;
+    height: 9px;
+    background-color:darkslategray;
+    display: inline-block;
+    margin-right: 0;
+    padding-right: 0;*/
+    position: absolute;
+    width: 1px;
+    height: 9px;
+    background-color: darkslategray;
+    right: 35%;
+    /*top: 49%;*/
+}
+/*.degreesContainer{
+    position: relative;
+
+    width: 70%;
+    right: 16%;
+    top: 355px;
+    border:none;
+}*/
+#point1{
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 20px;
+    height: 90px;
+    background-color: darkslategray;
+}
+
+#point2{
+    position: absolute;
+    top: 327px;
+    left: 0;
+    width: 20px;
+    height: 67px;
+    background-color: darkslategray;
+}
+#point3{
+    position: absolute;
+    top: 543px;
+    left: 0;
+    width: 20px;
+    height: 67px;
+    background-color: darkslategray;
+}
+#point4{
+    position: absolute;
+    top: 760px;
+    left: 0;
+    width: 20px;
+    height: 67px;
+    background-color: darkslategray;
+}
+.contacts li:before{
+    content: none;
+}
+.contacts li{
+    margin-bottom: 18px;
+}
+
+
+ progress[value] {
+  -webkit-appearance: none;
+  width: 40%;
+  height: 20px;
+}
+progress::-webkit-progress-value{
+  background-color: $secondColor;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+ 
+}
+progress[value]::-webkit-progress-bar{
+  background-color: #eee;
+  border-radius: 2px;
+  height: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+section{
+    margin-bottom: 30px;
+}
+
+@media (max-width:1170px){
+   
+    h2 , .sections, .subSections{
+        font-size: 25px;
+    }
+   .contacts address, .contacts a,.shortDesc, li,.education li,.skills,.when,.where{
+        font-size: 15px;
+       
+    }
+  .where{
+      margin-right: 220px;
+  }
+  .subSections{
+      font-weight: 500;
+  }
+}
+  @media (max-width:768px){
+      .contacts address, .contacts a{
+        font-size: 13px;
+    }
+   .detailsLeft, .detailsRight{
+          width: 100%;
+      }
+   #degree1{
+        right: 31%;
+  }
+  #degree2{
+      right: 43%;
+  }
+   #degree3{
+      right: 56%;
+  }
+   #degree4{
+      right: 68%;
+  }
+  .education li{
+      display: block;
+  }
+  .shortDesc,.contacts li{
+      font-size: 15px;
+  }
+     #point1{
+         top:70px;
+     }
+      #point2{
+         top:400px;
+     }
+     #point3{
+         top:620px;
+     }
+     #point4{
+         top:830px;
+     }
+  }
+    
