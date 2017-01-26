@@ -1,7 +1,6 @@
- 
- $secondColor: darkslategrey;
- 
- 
+ body{
+      margin:auto 20px;
+  }
   h1{
       font-size: 55px;
       padding: 0px 0px;
@@ -35,22 +34,18 @@
       font-size: 35px;
       text-decoration: underline;
       margin: 25px auto;
-      color: $secondColor;
+      color: darkslategrey;
       
   }
-
-  
-
-
-  
-
-
+  .contacts{
+      font-size: 15px;
+    
+  }
  
 
-
-
+@import 'reset';
   body{
-      border: 2px solid $secondColor;
+      border: 2px solid darkslategrey;
       
   }
   .contactsList{ 
@@ -59,7 +54,6 @@
       margin-right: auto;
       padding: 0;
       width: 33%; 
-      /*height: 200px; */
       overflow: hidden;
   }
   .bio{ 
@@ -68,7 +62,6 @@
       margin-right: auto;
       padding: 0;
       width: 33%; 
-      /*height: 200px;*/
       overflow: hidden;
   }
   .personalPhoto{ 
@@ -88,40 +81,31 @@ img{
     margin-left: auto;
     margin-right: auto;
     border-radius: 50%;
-    border: 4px $secondColor solid;  
+    border: 4px darkslategrey solid;  
 }
 .header{
-    /*display: inline-block;*/
     width: 100%;
-    /*height: 20%;*/
     margin-bottom: 10px;
     padding: 1em;
     margin: 0 -1em;
-    border-bottom: 2px $secondColor solid;
+    border-bottom: 2px darkslategrey solid;
     overflow: hidden;
     
 }
 
 .details{
-    /*display: inline-block;*/
     width: 100%;
     overflow: hidden;
-    /*height: 80%;*/
-    
 }
 .detailsLeft{
     float: left;
     width: 50%;
-    /*height: 100%;*/
-    /*vertical-align: top;*/
     overflow: hidden;
     
 }
 .detailsRight{
     float: right;
     width: 50%;
-    /*height: 100%; */
-   /*vertical-align: top;*/
      overflow: hidden;
 }
 body{
@@ -145,7 +129,6 @@ h4{
 .contacts{
    width: 100%;
    height: 180px;
-   /*font-size: 20px;*/
    overflow: hidden;
 }
 .contacts i{
@@ -192,7 +175,7 @@ ul{
 }
 li:before{
     content: "• ";
-    color: $secondColor;
+    color: darkslategrey;
 }
 
  .languages li:before, .achievments li:before, .progressList li:before{
@@ -234,7 +217,7 @@ a{
     font-size: 15px;
 }
 .fa-envelope, .fa-phone, .fa-linkedin, .fa-github{
-    color: $secondColor;
+    color: darkslategrey;
 }
 .skills{
     display: inline-block;
@@ -246,69 +229,34 @@ a{
 }
 
 #degree1{
-    /*width: 1px;
-    height: 9px;
-    background-color:darkslategray;
-    display: inline-block;  
-    position: absolute;
-    right: 30px;
-    top:67px;*/
     position: absolute;
     width: 1px;
     height: 9px;
     background-color: darkslategray;
     right: 16%;
-    /*top: 49%;*/
-
 }
 #degree2{
-    /*width: 1px;
-    height: 9px;
-    background-color:darkslategray;
-    display: inline-block;  
-    margin-right: 31%;*/
     position: absolute;
     width: 1px;
     height: 9px;
     background-color: darkslategray;
     right: 22%;
-    /*top: 49%;*/
 }
 #degree3{
-    /*width: 1px;
-    height: 9px;
-    background-color:darkslategray;
-    display: inline-block;
-    margin-right: 31%;*/
     position: absolute;
     width: 1px;
     height: 9px;
     background-color: darkslategray;
     right: 29%;
-    /*top: 49%;*/
 }
 #degree4{
-    /*width: 1px;
-    height: 9px;
-    background-color:darkslategray;
-    display: inline-block;
-    margin-right: 0;
-    padding-right: 0;*/
     position: absolute;
     width: 1px;
     height: 9px;
     background-color: darkslategray;
     right: 35%;
-    /*top: 49%;*/
 }
-/*.degreesContainer{
-    position: relative;
 
-    width: 70%;
-    right: 16%;
-    top: 355px;
-    border:none;
-}*/
 #point1{
     position: absolute;
     top: 45px;
@@ -356,7 +304,7 @@ a{
   height: 20px;
 }
 progress::-webkit-progress-value{
-  background-color: $secondColor;
+  background-color: darkslategrey;
   border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
  
