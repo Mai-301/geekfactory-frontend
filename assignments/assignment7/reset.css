@@ -6,7 +6,8 @@ p,
 a,
 ul,
 ol,
-body, .sections,
+body,
+.sections,
 .contacts,
 .subSections {
   margin: 0;

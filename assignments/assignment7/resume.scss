@@ -169,13 +169,16 @@ ul{
     list-style: none;   
 }
 li:before{
-    content: "• ";
+    content: '\2022';
     color: $second-color;
 }
 
- .languages li:before, .achievments li:before, .progressList li:before{
-     content: none;
-     list-style-type: none;
+ .languages , .achievments, .progressList {
+     li:before{
+         content: none;
+         list-style-type: none;
+     }
+    
 }
 .skillsAndCompetences{
     margin-bottom: 10px;
@@ -252,22 +255,22 @@ a{
   height: 90px;
   background-color: darkslategray;
 }
-#point1{
+#rect1{
   @extend .leftColoredRect;
   top: 45px;
 }
 
-#point2{
+#rect2{
    @extend .leftColoredRect;
    top: 327px;
     
 }
-#point3{
+#rect3{
      @extend .leftColoredRect;
      top: 543px;
     
 }
-#point4{
+#rect4{
      @extend .leftColoredRect;
      top: 760px;
    
@@ -314,15 +317,20 @@ section{
             font-size: 15px;
        }
     }
-    .shortDesc, li,.education li,.skills,.when,.where{
-    font-size: 15px;
-   }
+    .shortDesc,.education{
+        li{
+           font-size: 15px;
+        }
+     }
+     .skills,.when,.where{
+       font-size: 15px;
+     }
     .subSections{
       font-weight: 500;
     }
 }
   @media (max-width:768px){
-      .contacts {
+    .contacts {
         address{
             font-size: 13px;
         }  
@@ -352,16 +360,16 @@ section{
   .shortDesc,.contacts li{
       font-size: 15px;
   }
-     #point1{
+     #rect1{
          top:70px;
      }
-      #point2{
+      #rect2{
          top:400px;
      }
-     #point3{
+     #rect3{
          top:620px;
      }
-     #point4{
+     #rect4{
          top:830px;
      }
   

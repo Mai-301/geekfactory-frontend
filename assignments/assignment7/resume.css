@@ -1,4 +1,3 @@
-@charset "UTF-8";
 body {
   margin: auto 20px; }
 
@@ -42,7 +41,8 @@ p,
 a,
 ul,
 ol,
-body, .sections,
+body,
+.sections,
 .contacts,
 .subSections {
   margin: 0;
@@ -158,7 +158,7 @@ ul {
   list-style: none; }
 
 li:before {
-  content: "ΓÇó ";
+  content: '\2022';
   color: darkslategrey; }
 
 .languages li:before, .achievments li:before, .progressList li:before {
@@ -228,23 +228,23 @@ a {
 #degree4 {
   right: 35%; }
 
-.leftColoredRect, #point1, #point2, #point3, #point4 {
+.leftColoredRect, #rect1, #rect2, #rect3, #rect4 {
   position: absolute;
   left: 0;
   width: 20px;
   height: 90px;
   background-color: darkslategray; }
 
-#point1 {
+#rect1 {
   top: 45px; }
 
-#point2 {
+#rect2 {
   top: 327px; }
 
-#point3 {
+#rect3 {
   top: 543px; }
 
-#point4 {
+#rect4 {
   top: 760px; }
 
 .contacts li:before {
@@ -280,7 +280,10 @@ section {
   .contacts a {
     font-size: 15px; }
 
-  .shortDesc, li, .education li, .skills, .when, .where {
+  .shortDesc li, .education li {
+    font-size: 15px; }
+
+  .skills, .when, .where {
     font-size: 15px; }
 
   .subSections {
@@ -312,16 +315,16 @@ section {
   .shortDesc, .contacts li {
     font-size: 15px; }
 
-  #point1 {
+  #rect1 {
     top: 70px; }
 
-  #point2 {
+  #rect2 {
     top: 400px; }
 
-  #point3 {
+  #rect3 {
     top: 620px; }
 
-  #point4 {
+  #rect4 {
     top: 830px; } }
 
 /*# sourceMappingURL=resume.css.map */
