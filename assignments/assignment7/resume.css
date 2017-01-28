@@ -199,7 +199,7 @@ li {
 a {
   font-size: 15px; }
 
-.fa-envelope, .fa-phone, .fa-linkedin, .fa-github {
+.fa {
   color: darkslategrey; }
 
 .skills {
@@ -228,24 +228,12 @@ a {
 #degree4 {
   right: 35%; }
 
-.leftColoredRect, #rect1, #rect2, #rect3, #rect4 {
+.leftColoredRect {
   position: absolute;
   left: 0;
   width: 20px;
   height: 90px;
   background-color: darkslategray; }
-
-#rect1 {
-  top: 45px; }
-
-#rect2 {
-  top: 327px; }
-
-#rect3 {
-  top: 543px; }
-
-#rect4 {
-  top: 760px; }
 
 .contacts li:before {
   content: none; }
@@ -315,16 +303,7 @@ section {
   .shortDesc, .contacts li {
     font-size: 15px; }
 
-  #rect1 {
-    top: 70px; }
-
-  #rect2 {
-    top: 400px; }
-
-  #rect3 {
-    top: 620px; }
-
-  #rect4 {
-    top: 830px; } }
+  .leftColoredRect {
+    display: none; } }
 
 /*# sourceMappingURL=resume.css.map */

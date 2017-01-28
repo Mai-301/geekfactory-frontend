@@ -255,26 +255,7 @@ a{
   height: 90px;
   background-color: darkslategray;
 }
-#rect1{
-  @extend .leftColoredRect;
-  top: 45px;
-}
 
-#rect2{
-   @extend .leftColoredRect;
-   top: 327px;
-    
-}
-#rect3{
-     @extend .leftColoredRect;
-     top: 543px;
-    
-}
-#rect4{
-     @extend .leftColoredRect;
-     top: 760px;
-   
-}
 .contacts {
     li:before{
     content: none;
@@ -360,18 +341,10 @@ section{
   .shortDesc,.contacts li{
       font-size: 15px;
   }
-     #rect1{
-         top:70px;
-     }
-      #rect2{
-         top:400px;
-     }
-     #rect3{
-         top:620px;
-     }
-     #rect4{
-         top:830px;
-     }
+  .leftColoredRect{
+      display: none;
+  }
+    
   
     
 }
