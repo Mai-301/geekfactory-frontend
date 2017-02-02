@@ -20,9 +20,8 @@ var odds = function (arr) {
 var find = function (arr, predictionFn) {
     if (Array.isArray(arr)) {
         for (var i = 0; i < arr.length; i++) {
-            if (predictionFn(arr[i])) {
+            if (predictionFn(arr[i]))
                 return arr[i];
-            }
         }
     }
 }
