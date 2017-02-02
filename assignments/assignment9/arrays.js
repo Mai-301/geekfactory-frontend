@@ -1,5 +1,5 @@
 var sum = function (arr) {
-    var sum = 0;
+    let sum = 0;
     if (Array.isArray(arr)) {
         arr.forEach(function (element) {
             sum += element
@@ -8,7 +8,7 @@ var sum = function (arr) {
     }
 }
 var odds = function (arr) {
-    var oddArray = [];
+    let oddArray = [];
     if (Array.isArray(arr)) {
         arr.forEach(function (element) {
             if (element % 2 !== 0)
@@ -17,6 +17,17 @@ var odds = function (arr) {
         return oddArray;
     }
 }
+var find = function (arr, predictionFn) {
+    if (Array.isArray(arr)) {
+        for (var i = 0; i < arr.length; i++) {
+            if (predictionFn(arr[i])) {
+                return arr[i];
+            }
+        }
+    }
+}
 
 exports.sum = sum;
 exports.odds = odds;
+exports.find = find;
+
