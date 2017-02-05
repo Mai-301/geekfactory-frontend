@@ -3,4 +3,8 @@ var saveForLater=function(name){
         return name;
     };
 }
+var executeLater=function(predictionFn){
+    return predictionFn;
+}
 exports.saveForLater=saveForLater;
+exports.executeLater=executeLater;
