@@ -15,6 +15,9 @@ var Task = function (category, title, priority, estimate) {
     this.done = function () {
         return this.remaining === 0 ? true : false;
     }
+    this.complete = function () {
+        this.remaining = 0;
+    }
 
 }
 module.exports = Task;
