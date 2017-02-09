@@ -10,6 +10,16 @@ var create = function () {
         },
         get: function (index) {
             return this.tasksArr[index];
+        },
+        getAll: function (isActiveOnly) {
+            if (isActiveOnly) {
+                this.tasksArr.forEach(function (task, taskIndex) {
+                    if (task.estimate === 0) {
+                        this.tasksArr.splice(taskIndex, 1);
+                    }
+                }, this);
+            }
+            return this.tasksArr;
         }
     }
     return taskManager;

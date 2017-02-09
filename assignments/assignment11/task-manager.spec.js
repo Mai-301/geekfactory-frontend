@@ -40,46 +40,46 @@ describe('taskManager', function () {
         });
     });
 
-    describe('#find', function () {
-        it('should find added task if title match', function () {
-            var manager = taskManager.create();
-            var task = manager.create('work', 'Code Review', 1, 1.5);
-            assert(task === manager.find('code r')[0]);
-        });
+    // describe('#find', function () {
+    //     it('should find added task if title match', function () {
+    //         var manager = taskManager.create();
+    //         var task = manager.create('work', 'Code Review', 1, 1.5);
+    //         assert(task === manager.find('code r')[0]);
+    //     });
 
-        it('should find added task if category match', function () {
-            var manager = taskManager.create();
-            var task = manager.create('work', 'Code Review', 1, 1.5);
-            assert(task === manager.find('work')[0]);
-        });
+    //     it('should find added task if category match', function () {
+    //         var manager = taskManager.create();
+    //         var task = manager.create('work', 'Code Review', 1, 1.5);
+    //         assert(task === manager.find('work')[0]);
+    //     });
         
-        it('should not find added task if title and category do not match', function () {
-            var manager = taskManager.create();
-            var task = manager.create('work', 'Code Review', 1, 1.5);
-            assert(0 === manager.find('code rr').length);
-        });
-    });
+    //     it('should not find added task if title and category do not match', function () {
+    //         var manager = taskManager.create();
+    //         var task = manager.create('work', 'Code Review', 1, 1.5);
+    //         assert(0 === manager.find('code rr').length);
+    //     });
+    // });
 
-    describe('#remove', function () {
-        it('should remove added task by index', function () {
-            var manager = taskManager.create();
-            var task = manager.create('work', 'Code Review', 1, 1.5);
-            manager.remove(0);
-            assert.equal(0, manager.getAll().length);
-        });
+    // describe('#remove', function () {
+    //     it('should remove added task by index', function () {
+    //         var manager = taskManager.create();
+    //         var task = manager.create('work', 'Code Review', 1, 1.5);
+    //         manager.remove(0);
+    //         assert.equal(0, manager.getAll().length);
+    //     });
         
-        it('should remove added task by reference', function () {
-            var manager = taskManager.create();
-            var task = manager.create('work', 'Code Review', 1, 1.5);
-            manager.remove(task);
-            assert.equal(0, manager.getAll().length);
-        });
+    //     it('should remove added task by reference', function () {
+    //         var manager = taskManager.create();
+    //         var task = manager.create('work', 'Code Review', 1, 1.5);
+    //         manager.remove(task);
+    //         assert.equal(0, manager.getAll().length);
+    //     });
 
-        it('should not remove if out of index', function () {
-            var manager = taskManager.create();
-            var task = manager.create('work', 'Code Review', 1, 1.5);
-            manager.remove(10);
-            assert.equal(1, manager.getAll().length);
-        });
-    });
+    //     it('should not remove if out of index', function () {
+    //         var manager = taskManager.create();
+    //         var task = manager.create('work', 'Code Review', 1, 1.5);
+    //         manager.remove(10);
+    //         assert.equal(1, manager.getAll().length);
+    //     });
+    // });
 });
