@@ -20,6 +20,17 @@ var create = function () {
                 }, this);
             }
             return this.tasksArr;
+        },
+        find: function (titleOrCategory) {
+            let foundTasks = [];
+            this.tasksArr.forEach(function (task) {
+                let lastIndex = task.title.lastIndexOf(' ');
+                let truncatedTitle=task.title.toLowerCase().substring(0,lastIndex+2);
+                if (truncatedTitle === titleOrCategory || task.category === titleOrCategory) {
+                    foundTasks.push(task);
+                }
+            }, this);
+            return foundTasks;
         }
     }
     return taskManager;
