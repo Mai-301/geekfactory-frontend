@@ -25,13 +25,13 @@ describe('Company', function () {
             assert.equal(10, manager.reports);
         });
 
-        // it('getInfo returns the name with manager role under IT department with managing 10 employees', function () {
-        //     var manager = new company.Manager('Khaled', 'IT', 10);
-        //     assert.equal('My name is Khaled. I am manager in the IT department. I manage 10 employees.', manager.getInfo());
-        // });
+        it('getInfo returns the name with manager role under IT department with managing 10 employees', function () {
+            var manager = new company.Manager('Khaled', 'IT', 10);
+            assert.equal('My name is Khaled. I am manager in the IT department. I manage 10 employees.', manager.getInfo());
+        });
 
-        // it('Manager inherits from Employee', function () {
-        //     assert.equal(company.Manager.prototype.__proto__, company.Employee.prototype);
-        // });
+        it('Manager inherits from Employee', function () {
+            assert.equal(company.Manager.prototype.__proto__, company.Employee.prototype);
+        });
     });
 });
