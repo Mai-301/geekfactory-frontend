@@ -21,23 +21,23 @@ var create = function () {
             }
             return this.tasksArr;
         },
-        find: function (title_category) {
+        find: function (query) {
             let foundTasks = [];
             this.tasksArr.forEach(function (task) {
                 let lastIndex = task.title.lastIndexOf(' ');
                 let truncatedTitle = task.title.toLowerCase().substring(0, lastIndex + 2);
-                if (truncatedTitle === title_category || task.category === title_category) {
+                if (truncatedTitle === query || task.category === query) {
                     foundTasks.push(task);
                 }
             }, this);
             return foundTasks;
         },
-        remove: function (index_task) {
-            if (typeof index_task === 'number' && index_task < this.tasksArr.length) {
-                this.tasksArr.splice(index_task, 1);
+        remove: function (query) {
+            if (typeof query === 'number' && query < this.tasksArr.length) {
+                this.tasksArr.splice(query, 1);
             }
-            else if (index_task instanceof Task) {
-                let taskIndex = this.tasksArr.indexOf(index_task);
+            else if (query instanceof Task) {
+                let taskIndex = this.tasksArr.indexOf(query);
                 if (taskIndex !== -1) {
                     this.tasksArr.splice(taskIndex, 1);
                 }
