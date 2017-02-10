@@ -21,23 +21,23 @@ var create = function () {
             }
             return this.tasksArr;
         },
-        find: function (titleOrCategory) {
+        find: function (title_category) {
             let foundTasks = [];
             this.tasksArr.forEach(function (task) {
                 let lastIndex = task.title.lastIndexOf(' ');
                 let truncatedTitle = task.title.toLowerCase().substring(0, lastIndex + 2);
-                if (truncatedTitle === titleOrCategory || task.category === titleOrCategory) {
+                if (truncatedTitle === title_category || task.category === title_category) {
                     foundTasks.push(task);
                 }
             }, this);
             return foundTasks;
         },
-        remove: function (indexOrTask) {
-            if (typeof indexOrTask === 'number' && indexOrTask < this.tasksArr.length) {
-                this.tasksArr.splice(indexOrTask, 1);
+        remove: function (index_task) {
+            if (typeof index_task === 'number' && index_task < this.tasksArr.length) {
+                this.tasksArr.splice(index_task, 1);
             }
-            else if(indexOrTask instanceof Task){
-                let taskIndex = this.tasksArr.indexOf(indexOrTask);
+            else if (index_task instanceof Task) {
+                let taskIndex = this.tasksArr.indexOf(index_task);
                 if (taskIndex !== -1) {
                     this.tasksArr.splice(taskIndex, 1);
                 }

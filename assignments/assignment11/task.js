@@ -18,6 +18,5 @@ var Task = function (category, title, priority, estimate) {
     this.complete = function () {
         this.remaining = 0;
     }
-
 }
 module.exports = Task;
