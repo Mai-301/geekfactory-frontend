@@ -1,49 +1,51 @@
 var Task = require('./task');
 
 var create = function () {
-
-    let taskManager = {
-        tasksArr: [],
-        create: function (category, title, priority, estimate) {
-            this.tasksArr.push(new Task(category, title, priority, estimate));
-            return this.tasksArr[0];
-        },
-        get: function (index) {
-            return this.tasksArr[index];
-        },
-        getAll: function (isActiveOnly) {
-            if (isActiveOnly) {
-                this.tasksArr.forEach(function (task, taskIndex) {
-                    if (task.estimate === 0) {
-                        this.tasksArr.splice(taskIndex, 1);
-                    }
-                }, this);
-            }
-            return this.tasksArr;
-        },
-        find: function (query) {
-            let foundTasks = [];
-            this.tasksArr.forEach(function (task) {
-                let lastIndex = task.title.lastIndexOf(' ');
-                let truncatedTitle = task.title.toLowerCase().substring(0, lastIndex + 2);
-                if (truncatedTitle === query || task.category === query) {
-                    foundTasks.push(task);
+    var tasksArr = [];
+    function create(category, title, priority, estimate) {
+        var task = new Task(category, title, priority, estimate);
+        tasksArr.push(task);
+        return task;
+    };
+    function get(index) {
+        return tasksArr[index];
+    };
+    function getAll(isActiveOnly) {
+        if (isActiveOnly) {
+            tasksArr.forEach(function (task, taskIndex) {
+                if (task.estimate === 0) {
+                    tasksArr.splice(taskIndex, 1);
                 }
             }, this);
-            return foundTasks;
-        },
-        remove: function (query) {
-            if (typeof query === 'number' && query < this.tasksArr.length) {
-                this.tasksArr.splice(query, 1);
-            }
-            else if (query instanceof Task) {
-                let taskIndex = this.tasksArr.indexOf(query);
-                if (taskIndex !== -1) {
-                    this.tasksArr.splice(taskIndex, 1);
-                }
+        }
+        return tasksArr;
+    };
+    function find(query) {
+        let foundTasks = [];
+        tasksArr.forEach(function (task) {
+            if (task.title.toLowerCase().indexOf(query) > -1 || task.category.toLowerCase().indexOf(query) > -1)
+                foundTasks.push(task);
+
+        }, this);
+        return foundTasks;
+    };
+    function remove(query) {
+        if (typeof query === 'number' && query < tasksArr.length) {
+            tasksArr.splice(query, 1);
+        }
+        else if (query instanceof Task) {
+            let taskIndex = tasksArr.indexOf(query);
+            if (taskIndex !== -1) {
+                tasksArr.splice(taskIndex, 1);
             }
         }
     }
-    return taskManager;
+    return {
+        create: create,
+        get: get,
+        getAll: getAll,
+        find: find,
+        remove: remove
+    }
 }
 exports.create = create;

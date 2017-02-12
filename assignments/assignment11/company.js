@@ -5,7 +5,9 @@ company.Employee = function (name, department) {
     self.department = department;
     self.role = "employee";
 }
-
+company.Employee.prototype.getInfo = function () {
+    return "My name is " + this.name + ". I am " + this.role + " in the " + this.department + " department.";
+}
 company.Manager = function (name, department, reports) {
     var self = this;
     company.Employee.call(self, name, department);
@@ -13,11 +15,10 @@ company.Manager = function (name, department, reports) {
     self.reports = reports;
 
 }
-company.Manager.prototype.__proto__ = company.Employee.prototype;
-company.Employee.prototype.getInfo = function () {
-    return "My name is " + this.name + ". I am " + this.role + " in the " + this.department + " department.";
-}
+company.Manager.prototype = Object.create(company.Employee.prototype);
+
 company.Manager.prototype.getInfo = function () {
     return company.Employee.prototype.getInfo.call(this) + " I manage " + this.reports + " employees.";
 }
+
 module.exports = company;
