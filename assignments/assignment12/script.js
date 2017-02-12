@@ -11,7 +11,6 @@ document.getElementById('addTaskForm').addEventListener('submit', function (evt)
     var tr = document.createElement('tr');
     tr.innerHTML = rows;
     tbody.appendChild(tr)
-
     document.getElementById('category').value = '';
     document.getElementById('title').value = '';
     document.getElementById('priority').value = '';
