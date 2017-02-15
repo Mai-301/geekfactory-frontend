@@ -6,7 +6,7 @@ document.getElementById('addTaskForm').addEventListener('submit', function (evt)
     var estimate = document.getElementById('estimate').value;
     var task = createTaskManager().create(category, title, priority, estimate);
     var rows = '';
-    rows += '<tr><td>' + task.category + '</td><td>' + task.title + '</td><td>' + task.priority + '</td><td>' + task.estimate + '</td></tr>';
+rows += '<tr><td>' + task.category + '</td><td>' + task.title + '</td><td>' + task.priority + '</td><td>' + task.estimate + '</td><td>'+task.spent+'</td><td>'+task.remaining+'</td><td>'+(task.done()?'&#10004':'')+'</td></tr>';
     var tbody = document.getElementById('tasksTableBody');
     var tr = document.createElement('tr');
     tr.innerHTML = rows;
@@ -14,5 +14,5 @@ document.getElementById('addTaskForm').addEventListener('submit', function (evt)
     document.getElementById('category').value = '';
     document.getElementById('title').value = '';
     document.getElementById('priority').value = '';
-    document.getElementById('Festimate').value = '';
+    document.getElementById('estimate').value = '';
 });
