@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <title>GF Todo App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,50 +15,111 @@
     </header>
     <main>
         <section>
-            <h2>New task:</h2>
-          
-                <form id="new-todo" class="col-md-6">
-                    <label>Category: <input name="category" type="text" required></label>
-                    <label>Title: <input name="title" type="text" required></label>
-                    <label>Priority: <input name="priority" type="number" min="0" max="3" required></label>
-                    <label>Estimate: <input name="estimate" type="number" min="0" required></label>
-                    <input type="submit" value="Add">
-                </form>
-            
+            <h2>New task</h2>
+            <div class="container">
+                <div class="row">
+                    <form id="new-todo" class="col-sm-8">
+
+                        <div class="form-group">
+                            <label for="category" class="control-label col-sm-2">Category</label>
+                            <div class="col-sm-4"><input id="category" class="form-control" name="category" type="text" placeholder="category"
+                                    required></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="title" class="control-label col-sm-2">Title</label>
+                            <div class="col-sm-4"><input id="title" class="form-control" name="title" type="text" placeholder="title" required></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="priority" class="control-label col-sm-2">Priority</label>
+                            <div class="col-sm-2"><input id="priority" class="form-control" name="priority" type="number" min="0" max="3" placeholder="priority"
+                                    required></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="estimate" class="control-label col-sm-2">Estimate</label>
+                            <div class="col-sm-2"><input id="estimate" class="form-control" name="estimate" type="number" min="0" placeholder="estimate"
+                                    required></div>
+                        </div>
+
+                        <input class="col-sm-offset-3 col-sm-4 btn btn-primary" type="submit" value="Add">
+
+                    </form>
+                </div>
+            </div>
         </section>
         <section>
-            <h2>Tasks:</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <td>Category</td>
-                        <td>Title</td>
-                        <td>Priority</td>
-                        <td>Estimate</td>
-                        <td>Completed</td>
-                        <td>Remaining</td>
-                        <td>Done</td>
-                        <td>Delete</td>
-                        <td>Edit</td>
-                    </tr>
-                </thead>
-                <tbody id="tasks">
-                </tbody>
-            </table>
+            <h2>Tasks</h2>
+            <div class="container">
+                <div class="row">
+                    <table class="table table-bordered col-sm-8">
+                        <thead>
+                            <tr>
+                                <td>Category</td>
+                                <td>Title</td>
+                                <td>Priority</td>
+                                <td>Estimate</td>
+                                <td>Completed</td>
+                                <td>Remaining</td>
+                                <td>Done</td>
+                                <td>Delete</td>
+                                <td>Edit</td>
+                            </tr>
+                        </thead>
+                        <tbody id="tasks">
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
         </section>
         <section>
-            <h2>Edit task:</h2>
-         
-                <form id="edit-todo">
-                    <label>Category: <input id="edit_category" name="category" type="text" required></label>
-                    <label>Title: <input id="edit_title" name="title" type="text" required></label>
-                    <label>Priority: <input id="edit_priority" name="priority" type="number" min="0" max="3" required></label>
-                    <label>Estimate: <input id="edit_estimate" name="estimate" type="number" min="0" required></label>
-                    <label>Remaining: <input id="edit_remaining" name="remaining" type="number" step="any" required></label>
-                    <label>Done: <input id="edit_done" name="done" type="checkbox" ></label>
-                    <input id="submit_edit" type="submit" value="Edit" disabled="true">
-                </form>
-            
+            <h2>Edit task</h2>
+            <div class="container">
+                <div class="row">
+                    <form id="edit-todo" class="col-sm-8">
+
+                        <div class="form-group">
+                            <label for="edit_category" class="control-label col-sm-2">Category</label>
+                            <div class="col-sm-4"><input id="edit_category" class="form-control" name="category" type="text" placeholder="category"
+                                    disabled="disabled" required></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit_title" class="control-label col-sm-2">Title</label>
+                            <div class="col-sm-4"><input id="edit_title" class="form-control" name="title" type="text" placeholder="title" disabled="disabled"
+                                    required></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit_priority" class="control-label col-sm-2">Priority</label>
+                            <div class="col-sm-2"><input id="edit_priority" class="form-control" name="priority" type="number" min="0" max="3"
+                                    disabled="disabled" placeholder="priority" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit_estimate" class="control-label col-sm-2">Estimate</label>
+                            <div class="col-sm-2"><input id="edit_estimate" class="form-control" name="estimate" type="number" min="0" disabled="disabled"
+                                    placeholder="estimate" required></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit_remaining" class="control-label col-sm-2">Remaining</label>
+                            <div class="col-sm-2"><input id="edit_remaining" class="form-control" name="remaining" type="number" step="any" disabled="disabled"
+                                    placeholder="remaining" required></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-offset-2 col-xs-2">
+                                <div class="checkbox">
+                                    <label><input id="edit_done" name="done" type="checkbox" disabled="disabled">Done</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <input id="submit_edit" class="col-sm-4 btn btn-primary" type="submit" value="Edit" disabled="true">
+                    </form>
+                </div>
+            </div>
+
         </section>
     </main>
     <script src="jquery.min.js"></script>

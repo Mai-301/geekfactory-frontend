@@ -4,7 +4,7 @@
     var form = document.querySelector('form');
     var editForm = document.querySelector('#edit-todo');
     var tasksContainer = document.querySelector('#tasks');
-    var submitEditButton = document.querySelector("[id='submit_edit']");
+    var submitEditButton = document.querySelector('#submit_edit');
     var taskManager = createTaskManager();
     form && form.addEventListener('submit', addTask);
 
@@ -47,10 +47,10 @@
         tr.appendChild(createTableCell(task.estimate));
         tr.appendChild(createTableCell(task.spent));
         tr.appendChild(createTableCell(task.remaining));
-        tr.appendChild(createTableCell(task.done() ? '&#10004;':''));
+        tr.appendChild(createTableCell(task.done() ? '&#10004;' : ''));
 
-        tr.appendChild(deleteButton).addEventListener('click', deleteTask(task));
-        tr.appendChild(editButton).addEventListener('click', loadTaskDetails(task));
+        tr.appendChild(document.createElement('td')).appendChild(deleteButton).addEventListener('click', deleteTask(task));
+        tr.appendChild(document.createElement('td')).appendChild(editButton).addEventListener('click', loadTaskDetails(task));
 
         return tr;
     }
@@ -71,7 +71,6 @@
                     }
                     else {
                         task[input.name] = input.value;
-
                     }
                     input.disabled = true;
                 });
@@ -88,10 +87,8 @@
 
     function createTableCell(text) {
         var td = document.createElement('td');
-        //if (text) {
-            var text = document.createTextNode(text);
-            td.appendChild(text);
-        //}
+        var text = document.createTextNode(text);
+        td.appendChild(text);
         return td;
     }
 
