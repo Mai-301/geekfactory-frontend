@@ -1,6 +1,6 @@
 var createTaskManager = function () {
     var tasks = [];
-    var onChangeCallBack=null;
+    var onChangeCallBack = null;
     function create(category, title, priority, estimate) {
         var task = new Task(category, title, priority, estimate);
         tasks.push(task);
@@ -20,6 +20,11 @@ var createTaskManager = function () {
         return tasks[i];
     }
 
+    function edit(task) {
+        var editedTask = tasks.indexOf(task);
+        tasks[editedTask] = task;
+        onChangeCallBack && onChangeCallBack(tasks);
+    }
     function getAll(activeOnly) {
         return _filter(function (task) {
             return !activeOnly || !task.done();
@@ -38,9 +43,9 @@ var createTaskManager = function () {
 
         if (index >= 0 && index < tasks.length) {
             tasks.splice(index, 1);
-             onChangeCallBack && onChangeCallBack(tasks);
+            onChangeCallBack && onChangeCallBack(tasks);
         }
-       
+
     }
 
     function _filter(predicte) {
@@ -51,18 +56,19 @@ var createTaskManager = function () {
         return matched;
     }
 
-    function onChange(callBack){
-        onChangeCallBack=callBack;
+    function onChange(callBack) {
+        onChangeCallBack = callBack;
 
     }
-   
+
     return {
         create: create,
         find: find,
         get: get,
         getAll: getAll,
         remove: remove,
-        onChange:onChange
+        onChange: onChange,
+        edit: edit
 
     };
 };

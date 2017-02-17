@@ -2,9 +2,10 @@
 <html lang="en">
 
 <head>
+    <meta charset="utf-8" />
     <title>GF Todo App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<link rel="stylesheet" href="style.css">-->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -14,13 +15,15 @@
     <main>
         <section>
             <h2>New task:</h2>
-            <form id="new-todo">
-                <label>Category: <input name="category" type="text" required></label>
-                <label>Title: <input name="title" type="text" required></label>
-                <label>Priority: <input name="priority" type="number" min="0" max="3" required></label>
-                <label>Estimate: <input name="estimate" type="number" min="0" required></label>
-                <input type="submit" value="Add">
-            </form>
+          
+                <form id="new-todo" class="col-md-6">
+                    <label>Category: <input name="category" type="text" required></label>
+                    <label>Title: <input name="title" type="text" required></label>
+                    <label>Priority: <input name="priority" type="number" min="0" max="3" required></label>
+                    <label>Estimate: <input name="estimate" type="number" min="0" required></label>
+                    <input type="submit" value="Add">
+                </form>
+            
         </section>
         <section>
             <h2>Tasks:</h2>
@@ -35,17 +38,34 @@
                         <td>Remaining</td>
                         <td>Done</td>
                         <td>Delete</td>
+                        <td>Edit</td>
                     </tr>
                 </thead>
                 <tbody id="tasks">
                 </tbody>
             </table>
         </section>
-       
+        <section>
+            <h2>Edit task:</h2>
+         
+                <form id="edit-todo">
+                    <label>Category: <input id="edit_category" name="category" type="text" required></label>
+                    <label>Title: <input id="edit_title" name="title" type="text" required></label>
+                    <label>Priority: <input id="edit_priority" name="priority" type="number" min="0" max="3" required></label>
+                    <label>Estimate: <input id="edit_estimate" name="estimate" type="number" min="0" required></label>
+                    <label>Remaining: <input id="edit_remaining" name="remaining" type="number" step="any" required></label>
+                    <label>Done: <input id="edit_done" name="done" type="checkbox" ></label>
+                    <input id="submit_edit" type="submit" value="Edit" disabled="true">
+                </form>
+            
+        </section>
     </main>
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
     <script src="task.js"></script>
     <script src="taskManager_js.js"></script>
     <script src="script.js"></script>
+
 </body>
 
 </html>
