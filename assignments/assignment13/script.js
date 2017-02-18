@@ -3,6 +3,7 @@
 
     var form = document.querySelector('form');
     var editForm = document.querySelector('#edit-todo');
+    editForm.task = {};
     var tasksContainer = document.querySelector('#tasks');
     var submitEditButton = document.querySelector('#submit_edit');
     var taskManager = createTaskManager();
@@ -45,37 +46,52 @@
         tr.appendChild(createTableCell(task.title));
         tr.appendChild(createTableCell(task.priority));
         tr.appendChild(createTableCell(task.estimate));
-        tr.appendChild(createTableCell(task.spent));
+        // tr.appendChild(createTableCell(task.spent));
         tr.appendChild(createTableCell(task.remaining));
-        tr.appendChild(createTableCell(task.done() ? '&#10004;' : ''));
+        tr.appendChild(createTableCell(task.done() ? 'Yes' : 'No'));
 
         tr.appendChild(document.createElement('td')).appendChild(deleteButton).addEventListener('click', deleteTask(task));
-        tr.appendChild(document.createElement('td')).appendChild(editButton).addEventListener('click', loadTaskDetails(task));
 
+
+        tr.appendChild(document.createElement('td')).appendChild(editButton).addEventListener('click', loadTaskDetails(task));
+        editForm.task = task;
         return tr;
     }
+
+    editForm && editForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        event.target.querySelectorAll('input:not([type="submit"]').forEach(function (input) {
+            if (input.name === 'done') {
+                if (input.checked) {
+                    editForm.task.complete();
+                    //editForm.task.spent = editForm.task.estimate;
+                }
+            }
+            else if (input.type === 'number') {
+                editForm.task[input.name] = parseInt(input.value);
+            }
+            else {
+                editForm.task[input.name] = input.value;
+            }
+
+            input.disabled = true;
+        });
+        editForm.task.track(parseInt(editForm.task.spent));
+        taskManager.edit(editForm.task);
+        
+       // taskManager.edit(editForm.task);
+        submitEditButton.disabled = true;
+    });
+
     function loadTaskDetails(task) {
         return function () {
             submitEditButton.disabled = false;
+            editForm.task = task;
             editForm.querySelectorAll('input:not([type="submit"]').forEach(function (input) {
-                input.disabled = false;
+                if (input.name !== 'remaining') {
+                    input.disabled = false;
+                }
                 input.value = task[input.name];
-            });
-
-            editForm && editForm.addEventListener('submit', function (event) {
-                event.preventDefault();
-                event.target.querySelectorAll('input:not([type="submit"]').forEach(function (input) {
-                    if (input.name === 'done') {
-                        if (input.checked)
-                            task.remaining = 0;
-                    }
-                    else {
-                        task[input.name] = input.value;
-                    }
-                    input.disabled = true;
-                });
-                taskManager.edit(task);
-                submitEditButton.disabled = true;
             });
         }
     }
