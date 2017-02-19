@@ -1,8 +1,8 @@
 var createTaskManager = function () {
     var tasks = [];
     var onChangeCallBack = null;
-    function create(category, title, priority, estimate) {
-        var task = new Task(category, title, priority, estimate);
+    function create(category, title, priority, estimate, spent) {
+        var task = new Task(category, title, priority, estimate, spent);
         tasks.push(task);
         onChangeCallBack && onChangeCallBack(tasks);
         return task;
