@@ -7,7 +7,6 @@ var __extends = (this && this.__extends) || function (d, b) {
 var Person = (function () {
     function Person(name) {
         this.name = name;
-        this.name = name;
     }
     Person.prototype.getRole = function () {
     };
@@ -20,9 +19,7 @@ exports.Person = Person;
 var Student = (function (_super) {
     __extends(Student, _super);
     function Student(name) {
-        var _this = _super.call(this, name) || this;
-        _this.name = name;
-        return _this;
+        return _super.call(this, name) || this;
     }
     Student.prototype.getRole = function () {
         return 'Student';
@@ -33,9 +30,7 @@ exports.Student = Student;
 var Staff = (function (_super) {
     __extends(Staff, _super);
     function Staff(name) {
-        var _this = _super.call(this, name) || this;
-        _this.name = name;
-        return _this;
+        return _super.call(this, name) || this;
     }
     Staff.prototype.getRole = function () {
         return 'Staff';
@@ -47,7 +42,6 @@ var Teacher = (function (_super) {
     __extends(Teacher, _super);
     function Teacher(name, type) {
         var _this = _super.call(this, name) || this;
-        _this.name = name;
         _this.type = type;
         return _this;
     }

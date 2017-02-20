@@ -1,6 +1,6 @@
 export class Person {
     constructor(public name: string) {
-        this.name = name;
+
     }
     getRole() {
 
@@ -12,16 +12,16 @@ export class Person {
 }
 
 export class Student extends Person {
-    constructor(public name: string) {
+    constructor(name: string) {
         super(name);
     }
     getRole(): string {
         return 'Student';
-    } 
+    }
 }
 
 export class Staff extends Person {
-    constructor(public name: string) {
+    constructor(name: string) {
         super(name);
     }
     getRole(): string {
@@ -30,7 +30,7 @@ export class Staff extends Person {
 }
 
 export class Teacher extends Staff {
-    constructor(public name: string, public type: string) {
+    constructor(name: string, public type: string) {
         super(name);
     }
     getInfo(): string {
