@@ -1,12 +1,10 @@
 (function (scope) {
-    "use strict";
-
-    var form = document.querySelector('form');
-    var editForm = document.querySelector('#edit-todo') as any;
+    let form = document.querySelector('form');
+    let editForm = document.querySelector('#edit-todo') as any;
     editForm.task = {};
-    var tasksContainer = document.querySelector('#tasks');
-    var submitEditButton = document.querySelector('#submit_edit') as any;
-    var taskManager = create();
+    let tasksContainer = document.querySelector('#tasks');
+    let submitEditButton = document.querySelector('#submit_edit') as any;
+    let taskManager = create();
     form && form.addEventListener('submit', addTask);
     editForm && editForm.addEventListener('submit', editTask);
     taskManager.onChange(update);
@@ -57,7 +55,7 @@
         localStorage.setItem('tasks', JSON.stringify(taskManager.getAll()));
     }
 
-    function createTaskRow(task) {
+    function createTaskRow(task:Task) {
         var tr = document.createElement('tr');
         var deleteButton = document.createElement('button');
         deleteButton.innerHTML = 'Delete';
@@ -65,9 +63,9 @@
         editButton.innerHTML = 'Edit';
         tr.appendChild(createTableCell(task.category));
         tr.appendChild(createTableCell(task.title));
-        tr.appendChild(createTableCell(task.priority));
-        tr.appendChild(createTableCell(task.estimate));
-        tr.appendChild(createTableCell(task.remaining));
+        tr.appendChild(createTableCell(task.priority.toString()));
+        tr.appendChild(createTableCell(task.estimate.toString()));
+        tr.appendChild(createTableCell(task.remaining.toString()));
         tr.appendChild(createTableCell(task.done() ? 'Yes' : 'No'));
 
         tr.appendChild(document.createElement('td')).appendChild(deleteButton).addEventListener('click', deleteTask(task));
@@ -77,7 +75,7 @@
         return tr;
     }
 
-    function loadTaskDetails(task) {
+    function loadTaskDetails(task:Task) {
         return function () {
             submitEditButton.disabled = false;
             editForm.task = task;
@@ -89,20 +87,20 @@
             });
         }
     }
-    function deleteTask(task) {
+    function deleteTask(task:Task) {
         return function () {
             taskManager.remove(task);
         }
     }
 
-    function createTableCell(text) {
+    function createTableCell(text:string) {
         var td = document.createElement('td');
         var nodeText = document.createTextNode(text);
         td.appendChild(nodeText);
         return td;
     }
 
-    function storeTasks(tasks) {
+    function storeTasks(tasks:Array<Task>) {
         if (typeof scope.localStorage !== 'undefined') {
             scope.localStorage.setItem('tasks', JSON.stringify(tasks));
         }

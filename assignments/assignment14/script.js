@@ -1,5 +1,4 @@
 (function (scope) {
-    "use strict";
     var form = document.querySelector('form');
     var editForm = document.querySelector('#edit-todo');
     editForm.task = {};
@@ -60,9 +59,9 @@
         editButton.innerHTML = 'Edit';
         tr.appendChild(createTableCell(task.category));
         tr.appendChild(createTableCell(task.title));
-        tr.appendChild(createTableCell(task.priority));
-        tr.appendChild(createTableCell(task.estimate));
-        tr.appendChild(createTableCell(task.remaining));
+        tr.appendChild(createTableCell(task.priority.toString()));
+        tr.appendChild(createTableCell(task.estimate.toString()));
+        tr.appendChild(createTableCell(task.remaining.toString()));
         tr.appendChild(createTableCell(task.done() ? 'Yes' : 'No'));
         tr.appendChild(document.createElement('td')).appendChild(deleteButton).addEventListener('click', deleteTask(task));
         tr.appendChild(document.createElement('td')).appendChild(editButton).addEventListener('click', loadTaskDetails(task));
