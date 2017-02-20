@@ -1,10 +1,11 @@
-import { Task } from "./task";
-export let create = function () {
+let create = function () {
     let tasks = [];
+    let onChangeCallBack = null;
 
-    function create(category: string, title: string, priority: number, estimate: number) {
-        var task = new Task(category, title, priority, estimate);
+    function create(category: string, title: string, priority: number, estimate: number, spent: number) {
+        var task = new Task(category, title, priority, estimate, spent);
         tasks.push(task);
+        onChangeCallBack && onChangeCallBack(tasks);
         return task;
     };
 
@@ -18,6 +19,11 @@ export let create = function () {
 
     function get(i: number) {
         return tasks[i];
+    }
+    function edit(task) {
+        var editedTask = tasks.indexOf(task);
+        tasks[editedTask] = task;
+        onChangeCallBack && onChangeCallBack(tasks);
     }
 
     function getAll(activeOnly?: boolean) {
@@ -38,23 +44,33 @@ export let create = function () {
 
         if (index >= 0 && index < tasks.length) {
             tasks.splice(index, 1);
+            onChangeCallBack && onChangeCallBack(tasks);
+
         }
     }
 
     function _filter(predicte) {
         var matched = [];
-        tasks.forEach(function (task:Task) {
+        tasks.forEach(function (task: Task) {
             predicte(task) && matched.push(task);
         });
         return matched;
     }
+    function onChange(callBack) {
+        onChangeCallBack = callBack;
+
+    }
+
 
     return {
         create: create,
         find: find,
         get: get,
         getAll: getAll,
-        remove: remove
+        remove: remove,
+        onChange: onChange,
+        edit: edit
+
     };
 };
 

@@ -1,10 +1,10 @@
-"use strict";
-var task_1 = require("./task");
-exports.create = function () {
+var create = function () {
     var tasks = [];
-    function create(category, title, priority, estimate) {
-        var task = new task_1.Task(category, title, priority, estimate);
+    var onChangeCallBack = null;
+    function create(category, title, priority, estimate, spent) {
+        var task = new Task(category, title, priority, estimate, spent);
         tasks.push(task);
+        onChangeCallBack && onChangeCallBack(tasks);
         return task;
     }
     ;
@@ -16,6 +16,11 @@ exports.create = function () {
     }
     function get(i) {
         return tasks[i];
+    }
+    function edit(task) {
+        var editedTask = tasks.indexOf(task);
+        tasks[editedTask] = task;
+        onChangeCallBack && onChangeCallBack(tasks);
     }
     function getAll(activeOnly) {
         return _filter(function (task) {
@@ -33,6 +38,7 @@ exports.create = function () {
         }
         if (index >= 0 && index < tasks.length) {
             tasks.splice(index, 1);
+            onChangeCallBack && onChangeCallBack(tasks);
         }
     }
     function _filter(predicte) {
@@ -42,11 +48,16 @@ exports.create = function () {
         });
         return matched;
     }
+    function onChange(callBack) {
+        onChangeCallBack = callBack;
+    }
     return {
         create: create,
         find: find,
         get: get,
         getAll: getAll,
-        remove: remove
+        remove: remove,
+        onChange: onChange,
+        edit: edit
     };
 };

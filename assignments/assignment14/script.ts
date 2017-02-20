@@ -1,12 +1,11 @@
-import { create } from "./task-manager";
 (function (scope) {
     "use strict";
 
     var form = document.querySelector('form');
-    var editForm = document.querySelector('#edit-todo');
+    var editForm = document.querySelector('#edit-todo') as any;
     editForm.task = {};
     var tasksContainer = document.querySelector('#tasks');
-    var submitEditButton = document.querySelector('#submit_edit');
+    var submitEditButton = document.querySelector('#submit_edit') as any;
     var taskManager = create();
     form && form.addEventListener('submit', addTask);
     editForm && editForm.addEventListener('submit', editTask);
@@ -39,7 +38,7 @@ import { create } from "./task-manager";
 
     function addTask(event) {
         event.preventDefault();
-        var task = {};
+        var task = {} as any;
         event.target.querySelectorAll('input:not([type="submit"]').forEach(function (input) {
             task[input.name] = input.value;
             input.value = null;
@@ -98,8 +97,8 @@ import { create } from "./task-manager";
 
     function createTableCell(text) {
         var td = document.createElement('td');
-        var text = document.createTextNode(text);
-        td.appendChild(text);
+        var nodeText = document.createTextNode(text);
+        td.appendChild(nodeText);
         return td;
     }
 

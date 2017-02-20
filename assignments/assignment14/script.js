@@ -1,12 +1,11 @@
 (function (scope) {
     "use strict";
-
     var form = document.querySelector('form');
     var editForm = document.querySelector('#edit-todo');
     editForm.task = {};
     var tasksContainer = document.querySelector('#tasks');
     var submitEditButton = document.querySelector('#submit_edit');
-    var taskManager = createTaskManager();
+    var taskManager = create();
     form && form.addEventListener('submit', addTask);
     editForm && editForm.addEventListener('submit', editTask);
     taskManager.onChange(update);
@@ -35,7 +34,6 @@
         taskManager.edit(editForm.task);
         submitEditButton.disabled = true;
     }
-
     function addTask(event) {
         event.preventDefault();
         var task = {};
@@ -43,20 +41,17 @@
             task[input.name] = input.value;
             input.value = null;
         });
-        taskManager.create(task.category, task.title, task.priority, task.estimate,task.spent);
+        taskManager.create(task.category, task.title, task.priority, task.estimate, task.spent);
     }
-
     function update() {
         while (tasksContainer.hasChildNodes()) {
             tasksContainer.removeChild(tasksContainer.lastChild);
         }
-
         taskManager.getAll().forEach(function (task) {
             tasksContainer.appendChild(createTaskRow(task));
         });
         localStorage.setItem('tasks', JSON.stringify(taskManager.getAll()));
     }
-
     function createTaskRow(task) {
         var tr = document.createElement('tr');
         var deleteButton = document.createElement('button');
@@ -69,14 +64,10 @@
         tr.appendChild(createTableCell(task.estimate));
         tr.appendChild(createTableCell(task.remaining));
         tr.appendChild(createTableCell(task.done() ? 'Yes' : 'No'));
-
         tr.appendChild(document.createElement('td')).appendChild(deleteButton).addEventListener('click', deleteTask(task));
-
         tr.appendChild(document.createElement('td')).appendChild(editButton).addEventListener('click', loadTaskDetails(task));
-
         return tr;
     }
-
     function loadTaskDetails(task) {
         return function () {
             submitEditButton.disabled = false;
@@ -87,33 +78,30 @@
                 }
                 input.value = task[input.name];
             });
-        }
+        };
     }
     function deleteTask(task) {
         return function () {
             taskManager.remove(task);
-        }
+        };
     }
-
     function createTableCell(text) {
         var td = document.createElement('td');
-        var text = document.createTextNode(text);
-        td.appendChild(text);
+        var nodeText = document.createTextNode(text);
+        td.appendChild(nodeText);
         return td;
     }
-
     function storeTasks(tasks) {
         if (typeof scope.localStorage !== 'undefined') {
             scope.localStorage.setItem('tasks', JSON.stringify(tasks));
         }
     }
-
     function loadTasks() {
         if (typeof scope.localStorage !== 'undefined') {
             var tasks = JSON.parse(scope.localStorage.getItem('tasks'));
             tasks && tasks.forEach(function (task) {
-                taskManager.create(task.category, task.title, task.priority, task.estimate,task.spent);
-            })
+                taskManager.create(task.category, task.title, task.priority, task.estimate, task.spent);
+            });
         }
     }
 })(window);
