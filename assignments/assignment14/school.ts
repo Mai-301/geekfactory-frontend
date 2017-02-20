@@ -6,7 +6,7 @@ export class Person {
 
     }
     getInfo(): string {
-        return "My name is " + this.name + ". I am a " + this.getRole() + ".";
+        return `My name is ${this.name}. I am a ` + this.getRole() + '.';
     }
 
 }
@@ -16,8 +16,8 @@ export class Student extends Person {
         super(name);
     }
     getRole(): string {
-        return "Student";
-    }
+        return 'Student';
+    } 
 }
 
 export class Staff extends Person {
@@ -25,7 +25,7 @@ export class Staff extends Person {
         super(name);
     }
     getRole(): string {
-        return "Staff";
+        return 'Staff';
     }
 }
 
@@ -34,7 +34,7 @@ export class Teacher extends Staff {
         super(name);
     }
     getInfo(): string {
-        return super.getInfo() + ' I teach ' + this.type + '.';
+        return super.getInfo() + ` I teach ${this.type}.`;
     }
 }
 

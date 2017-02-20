@@ -12,7 +12,7 @@ var Person = (function () {
     Person.prototype.getRole = function () {
     };
     Person.prototype.getInfo = function () {
-        return "My name is " + this.name + ". I am a " + this.getRole() + ".";
+        return "My name is " + this.name + ". I am a " + this.getRole() + '.';
     };
     return Person;
 }());
@@ -25,7 +25,7 @@ var Student = (function (_super) {
         return _this;
     }
     Student.prototype.getRole = function () {
-        return "Student";
+        return 'Student';
     };
     return Student;
 }(Person));
@@ -38,7 +38,7 @@ var Staff = (function (_super) {
         return _this;
     }
     Staff.prototype.getRole = function () {
-        return "Staff";
+        return 'Staff';
     };
     return Staff;
 }(Person));
@@ -52,7 +52,7 @@ var Teacher = (function (_super) {
         return _this;
     }
     Teacher.prototype.getInfo = function () {
-        return _super.prototype.getInfo.call(this) + ' I teach ' + this.type + '.';
+        return _super.prototype.getInfo.call(this) + (" I teach " + this.type + ".");
     };
     return Teacher;
 }(Staff));
