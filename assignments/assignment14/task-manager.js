@@ -1,53 +1,52 @@
 "use strict";
 var task_1 = require("./task");
 exports.create = function () {
-    var tasksArr = [];
+    var tasks = [];
     function create(category, title, priority, estimate) {
         var task = new task_1.Task(category, title, priority, estimate);
-        tasksArr.push(task);
+        tasks.push(task);
         return task;
     }
     ;
-    function get(index) {
-        return tasksArr[index];
-    }
-    ;
-    function getAll(isActiveOnly) {
-        if (isActiveOnly) {
-            tasksArr.forEach(function (task, taskIndex) {
-                if (task.estimate === 0) {
-                    tasksArr.splice(taskIndex, 1);
-                }
-            }, this);
-        }
-        return tasksArr;
-    }
-    ;
     function find(query) {
-        var foundTasks = [];
-        tasksArr.forEach(function (task) {
-            if (task.title.toLowerCase().indexOf(query) > -1 || task.category.toLowerCase().indexOf(query) > -1)
-                foundTasks.push(task);
-        }, this);
-        return foundTasks;
+        query && query.toLowerCase && (query = query.toLowerCase());
+        return _filter(function (t) {
+            return t.title.toLowerCase().indexOf(query) > -1 || t.category.toLowerCase().indexOf(query) > -1;
+        });
     }
-    ;
-    function remove(query) {
-        if (typeof query === 'number' && query < tasksArr.length) {
-            tasksArr.splice(query, 1);
-        }
-        else if (query instanceof task_1.Task) {
-            var taskIndex = tasksArr.indexOf(query);
-            if (taskIndex !== -1) {
-                tasksArr.splice(taskIndex, 1);
+    function get(i) {
+        return tasks[i];
+    }
+    function getAll(activeOnly) {
+        return _filter(function (task) {
+            return !activeOnly || !task.done();
+        });
+    }
+    function remove(index) {
+        if (typeof index !== 'number') {
+            for (var i = 0; i < tasks.length; i++) {
+                if (tasks[i] === index) {
+                    index = i;
+                    break;
+                }
             }
         }
+        if (index >= 0 && index < tasks.length) {
+            tasks.splice(index, 1);
+        }
+    }
+    function _filter(predicte) {
+        var matched = [];
+        tasks.forEach(function (task) {
+            predicte(task) && matched.push(task);
+        });
+        return matched;
     }
     return {
         create: create,
+        find: find,
         get: get,
         getAll: getAll,
-        find: find,
         remove: remove
     };
 };

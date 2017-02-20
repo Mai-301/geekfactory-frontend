@@ -9,7 +9,7 @@ export class Task {
             this.remaining = Math.max(this.remaining - hours, 0);
         }
     }
-    private done() {
+    done():boolean {
         return this.remaining == 0 ? true : false;
     }
     private complete(): void {
