@@ -9,7 +9,7 @@
     editForm && editForm.addEventListener('submit', editTask);
     taskManager.onChange(update);
     loadTasks();
-    function editTask(event) {
+    function editTask(event:Event) {
         event.preventDefault();
         event.target.querySelectorAll('input:not([type="submit"]').forEach(function (input) {
             if (input.name === 'done') {
@@ -32,7 +32,7 @@
         submitEditButton.disabled = true;
     }
 
-    function addTask(event) {
+    function addTask(event:Event) {
         event.preventDefault();
         var task = {} as any;
         event.target.querySelectorAll('input:not([type="submit"]').forEach(function (input) {
