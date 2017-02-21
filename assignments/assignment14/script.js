@@ -17,9 +17,6 @@
                     editForm.task.complete();
                 }
             }
-            else if (input.name === 'spent') {
-                editForm.task.track(parseInt(input.value));
-            }
             else if (input.type === 'number') {
                 editForm.task[input.name] = parseInt(input.value);
             }
@@ -28,6 +25,7 @@
             }
             input.disabled = true;
         });
+        editForm.task.track(parseInt(editForm.task.spent));
         if (editForm.task.estimate < editForm.task.spent)
             editForm.task.remaining = 0;
         taskManager.edit(editForm.task);

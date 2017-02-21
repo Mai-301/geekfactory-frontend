@@ -1,6 +1,6 @@
 var create = function () {
     var tasks = [];
-    var onChangeCallBack = null;
+    var onChangeCallBack;
     function create(category, title, priority, estimate, spent) {
         var task = new Task(category, title, priority, estimate, spent);
         tasks.push(task);

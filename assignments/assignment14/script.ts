@@ -1,9 +1,9 @@
 (function (scope) {
     let form = document.querySelector('form');
-    let editForm = document.querySelector('#edit-todo') as any;
+    let editForm = document.querySelector('#edit-todo') as HTMLElement as any;
     editForm.task = {};
     let tasksContainer = document.querySelector('#tasks');
-    let submitEditButton = document.querySelector('#submit_edit') as any;
+    let submitEditButton = document.querySelector('#submit_edit') as HTMLElement as any;
     let taskManager = create();
     form && form.addEventListener('submit', addTask);
     editForm && editForm.addEventListener('submit', editTask);
@@ -17,9 +17,6 @@
                     editForm.task.complete();
                 }
             }
-            else if (input.name === 'spent') {
-                editForm.task.track(parseInt(input.value));
-            }
             else if (input.type === 'number') {
                 editForm.task[input.name] = parseInt(input.value);
             }
@@ -28,6 +25,7 @@
             }
             input.disabled = true;
         });
+        editForm.task.track(parseInt(editForm.task.spent));
         if (editForm.task.estimate < editForm.task.spent)
             editForm.task.remaining = 0;
         taskManager.edit(editForm.task);
@@ -41,7 +39,7 @@
             task[input.name] = input.value;
             input.value = null;
         });
-        taskManager.create(task.category, task.title, task.priority, task.estimate,task.spent);
+        taskManager.create(task.category, task.title, task.priority, task.estimate, task.spent);
     }
 
     function update() {
@@ -55,7 +53,7 @@
         localStorage.setItem('tasks', JSON.stringify(taskManager.getAll()));
     }
 
-    function createTaskRow(task:Task) {
+    function createTaskRow(task: Task) {
         var tr = document.createElement('tr');
         var deleteButton = document.createElement('button');
         deleteButton.innerHTML = 'Delete';
@@ -75,7 +73,7 @@
         return tr;
     }
 
-    function loadTaskDetails(task:Task) {
+    function loadTaskDetails(task: Task) {
         return function () {
             submitEditButton.disabled = false;
             editForm.task = task;
@@ -87,20 +85,20 @@
             });
         }
     }
-    function deleteTask(task:Task) {
+    function deleteTask(task: Task) {
         return function () {
             taskManager.remove(task);
         }
     }
 
-    function createTableCell(text:string) {
+    function createTableCell(text: string) {
         var td = document.createElement('td');
         var nodeText = document.createTextNode(text);
         td.appendChild(nodeText);
         return td;
     }
 
-    function storeTasks(tasks:Array<Task>) {
+    function storeTasks(tasks: Array<Task>) {
         if (typeof scope.localStorage !== 'undefined') {
             scope.localStorage.setItem('tasks', JSON.stringify(tasks));
         }
@@ -110,7 +108,7 @@
         if (typeof scope.localStorage !== 'undefined') {
             var tasks = JSON.parse(scope.localStorage.getItem('tasks'));
             tasks && tasks.forEach(function (task) {
-                taskManager.create(task.category, task.title, task.priority, task.estimate,task.spent);
+                taskManager.create(task.category, task.title, task.priority, task.estimate, task.spent);
             })
         }
     }
