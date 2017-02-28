@@ -9,13 +9,12 @@ import * as _ from 'lodash';
 })
 export class TasksComponent implements OnInit, OnChanges {
   tasks: Task[];
-  index:number;
+  index: number;
   constructor(private taskService: TaskService) {
     this.tasks = this.taskService.getTasks();
     this.taskService.selectedTask$.subscribe(
       data => {
         this.tasks.splice(this.index, 1, data);
-
       });
   }
 

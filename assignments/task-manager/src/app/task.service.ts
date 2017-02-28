@@ -6,13 +6,9 @@ import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class TaskService {
   @LocalStorage('tasks') tasks: Task[];
-  // Observable string sources
   private selectedTask = new Subject<Task>();
-  task:Task;
-  // Observable string streams
+  task: Task;
   selectedTask$ = this.selectedTask.asObservable();
-
-  // Service message commands
   publishData(task: Task) {
     this.selectedTask.next(task);
   }
@@ -35,11 +31,7 @@ export class TaskService {
       reject(this.tasks);
     });
   }
-  sendTaskDetails(task:Task){
-    this.task=task;
+  sendTaskDetails(task: Task) {
+    this.task = task;
   }
-  loadTask(){
-    return this.task;
-  }
-  
 }
