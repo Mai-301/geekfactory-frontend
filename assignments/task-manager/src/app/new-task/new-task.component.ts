@@ -19,11 +19,13 @@ export class NewTaskComponent implements OnInit {
     });
   }
   onSubmit() {
-    this.task.category = this.newTodoForm.value.category;
-    this.task.title = this.newTodoForm.value.title;
-    this.task.priority = this.newTodoForm.value.priority;
-    this.task.estimate = this.newTodoForm.value.estimate;
-    this.taskService.addTask(this.task);
+    let task: any = {
+      category: this.newTodoForm.value.category,
+      title: this.newTodoForm.value.title,
+      priority: this.newTodoForm.value.priority,
+      estimate: this.newTodoForm.value.estimate
+    }
+    this.taskService.addTask(task);
   }
 
   ngOnInit() {

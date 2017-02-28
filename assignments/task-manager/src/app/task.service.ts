@@ -18,6 +18,7 @@ export class TaskService {
     { category: "projects", title: "project1", priority: 3, estimate: 5, spent: 1, remaining: 5 }];
   }
   addTask(task: Task) {
+    console.log(task);
     this.tasks.push(task);
   }
 
@@ -27,9 +28,11 @@ export class TaskService {
   deleteTask(task: Task): Promise<Task[]> {
     this.tasks.splice(this.tasks.indexOf(task), 1);
     return new Promise((resolve, reject) => {
+      console.log(this.tasks);
       resolve(this.tasks);
       reject(this.tasks);
     });
+    
   }
   sendTaskDetails(task: Task) {
     this.task = task;

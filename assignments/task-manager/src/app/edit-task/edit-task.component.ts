@@ -9,7 +9,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class EditTaskComponent implements OnInit, OnChanges {
   isEmptyTasks: boolean = false;
-  task: Task = null;
   editTodoForm: FormGroup;
   private subscription;
   constructor(private taskService: TaskService, private formBuilder: FormBuilder) {
@@ -42,12 +41,12 @@ export class EditTaskComponent implements OnInit, OnChanges {
   }
   onSubmit(): void {
     let task: any = {
-      category: this.editTodoForm.get('category').value,
-      title: this.editTodoForm.get('title').value,
-      priority: this.editTodoForm.get('priority').value,
-      estimate: this.editTodoForm.get('estimate').value,
-      remaining: this.editTodoForm.get('remaining').value,
-      spent: this.editTodoForm.get('spent').value
+      category: this.editTodoForm.value.category,
+      title: this.editTodoForm.value.title,
+      priority: this.editTodoForm.value.priority,
+      estimate: this.editTodoForm.value.estimate,
+      remaining: this.editTodoForm.value.remaining,
+      spent: this.editTodoForm.value.spent
     }
     this.taskService.publishData(task);
   }
