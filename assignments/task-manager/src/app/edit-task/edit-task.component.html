@@ -1,0 +1,50 @@
+<section *ngIf="!isEmptyTasks">
+  <h2>Edit task</h2>
+  <div class="container">
+    <div class="row">
+      <form [formGroup]="editTodoForm" (ngSubmit)="onSubmit()" id="edit-todo" class="col-sm-8">
+        <fieldset ng-disabled="isSaving">
+          <div class="form-group">
+            <label for="edit_category" class="control-label col-sm-2">Category</label>
+            <div class="col-sm-4"><input id="category" formControlName="category" class="form-control" name="category" type="text" placeholder="category"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="edit_title" class="control-label col-sm-2">Title</label>
+            <div class="col-sm-4"><input id="title" formControlName="title" class="form-control" name="title" type="text" placeholder="title"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="edit_priority" class="control-label col-sm-2">Priority</label>
+            <div class="col-sm-2"><input id="priority" formControlName="priority" class="form-control" name="priority" type="number" min="0" max="3"
+                placeholder="priority"></div>
+          </div>
+          <div class="form-group">
+            <label for="edit_estimate" class="control-label col-sm-2">Estimate</label>
+            <div class="col-sm-2"><input id="estimate" formControlName="estimate" class="form-control" name="estimate" type="number" min="0" placeholder="estimate"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="edit_remaining" class="control-label col-sm-2">Remaining</label>
+            <div class="col-sm-2"><input id="remaining" formControlName="remaining" class="form-control" name="remaining" type="number" step="any"
+                placeholder="remaining"></div>
+          </div>
+          <div class="form-group">
+            <label for="edit_spent" class="control-label col-sm-2">Spent</label>
+            <div class="col-sm-2"><input id="spent" formControlName="spent" class="form-control" name="spent" type="number" step="any" placeholder="spent"></div>
+          </div>
+          <div class="form-group">
+            <div class="col-xs-offset-2 col-xs-2">
+              <div class="checkbox">
+                <label><input id="edit_done" name="done" type="checkbox" disabled="disabled">Done</label>
+              </div>
+            </div>
+          </div>
+          <button class="col-sm-4 btn btn-primary" type="submit" [disabled]="!editTodoForm.valid">Add</button>
+          
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+</section>
