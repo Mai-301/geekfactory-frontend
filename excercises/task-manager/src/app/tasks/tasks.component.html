@@ -1,0 +1,36 @@
+<section>
+  <h2>Tasks</h2>
+  <h3>You have :{{tasks.length}}</h3>
+  <div class="container">
+    <div class="row">
+      <table class="table table-bordered col-sm-8">
+        <thead>
+          <tr>
+            <td>Category</td>
+            <td>Title</td>
+            <td>Priority</td>
+            <td>Estimate</td>
+            <td>Remaining</td>
+            <td>Done</td>
+            <td>Delete</td>
+            <td>Edit</td>
+          </tr>
+        </thead>
+
+        <tbody id="tasks">
+          <tr *ngFor="let task of tasks">
+            <td>{{task.category}}</td>
+            <td>{{task.title}}</td>
+            <td>{{task.priority}}</td>
+            <td>{{task.estimate}}</td>
+            <td>{{task.remaining}}</td>
+            <td><input type="checkbox" (click)="done()" /></td>
+            <td><input type="button" (click)="deleteTask(task)" value="Delete" /></td>
+            <td><input type="button" (click)="sendTaskDetails(task)" value="Edit" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
